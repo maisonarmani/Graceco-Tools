@@ -1,0 +1,18 @@
+{
+ "creation": "2016-10-03 17:23:58.666018", 
+ "custom_format": 0, 
+ "disabled": 0, 
+ "doc_type": "Weekly Production Order Form", 
+ "docstatus": 0, 
+ "doctype": "Print Format", 
+ "font": "Default", 
+ "format_data": "[{\"fieldname\": \"print_heading_template\", \"fieldtype\": \"HTML\", \"options\": \" <h1><img src=\\\"/files/GC_0313-GraceCo logo-v2.jpg\\\"><b><span>Weekly Production Order Form</span></b></h1>\"}, {\"fieldtype\": \"Section Break\"}, {\"fieldtype\": \"Column Break\"}, {\"print_hide\": 0, \"fieldname\": \"date\"}, {\"print_hide\": 0, \"fieldname\": \"production_unit\"}, {\"fieldtype\": \"Section Break\"}, {\"fieldtype\": \"Column Break\"}, {\"visible_columns\": [{\"print_hide\": 0, \"fieldname\": \"item_name\", \"print_width\": \"\"}, {\"print_hide\": 0, \"fieldname\": \"uom\", \"print_width\": \"\"}, {\"print_hide\": 0, \"fieldname\": \"qty\", \"print_width\": \"\"}, {\"print_hide\": 0, \"fieldname\": \"remark\", \"print_width\": \"\"}], \"print_hide\": 0, \"fieldname\": \"items\"}, {\"fieldtype\": \"Section Break\"}, {\"fieldtype\": \"Column Break\"}, {\"print_hide\": 0, \"fieldname\": \"_custom_html\", \"fieldtype\": \"HTML\", \"options\": \"<b>Production Manager <br></b><br>Name:<br><br>Signature &amp; Date :<br>\"}, {\"fieldtype\": \"Column Break\"}, {\"print_hide\": 0, \"fieldname\": \"_custom_html\", \"fieldtype\": \"HTML\", \"options\": \"<b>Production Administrator<br></b><br>Name:<br><br>Signature &amp; Date :<br>\"}]", 
+ "idx": 0, 
+ "modified": "2016-10-03 17:28:07.103515", 
+ "modified_by": "Administrator", 
+ "name": "Weekly Production Order Form", 
+ "owner": "Administrator", 
+ "print_format_builder": 0, 
+ "print_format_type": "Server", 
+ "standard": "Yes"
+}
