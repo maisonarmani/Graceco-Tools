@@ -9,7 +9,7 @@ def execute(filters=None):
 	item=""
 	item_group=""
 	if filters.get("item"):
-		item = """ and soi.item_code = '{}' """.format(filters.get("item")
+		item = """ and soi.item_code = '{}' """.format(filters.get("item"))
 	if filters.get("item_group"):
 		item_group = """ and soi.item_group = '{}' """.format(filters.get("item_group"))
 	data=frappe.db.sql("""select soi.item_code, soi.item_name, sum(soi.amount) 
