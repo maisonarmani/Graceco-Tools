@@ -16,7 +16,7 @@ def execute(filters=None):
 	if filters.get("item_group"):
 		so_item_group = """ and soi.item_group = '{}' """.format(filters.get("item_group"))
 		dn_item_group = """ and dni.item_group = '{}' """.format(filters.get("item_group"))
-	data=frappe.db.sql("""select order.item_code, order.item_name,order.amount,delivery.amount,(order.amount-delivery.amount) 
+	data=frappe.db.sql("""select order.item_code, order.item_name,order.amount,delivery.amount,(order.amount-delivery.amount) as total
 		from (select soi.item_code, soi.item_name, sum(soi.amount) as amount
 		from `tabSales Order Item` soi join `tabSales Order` so on soi.parent=so.name 
 		where so.docstatus=1 and (so.transaction_date between '{0}' and '{1}') {2} {3} group by soi.item_code) order
