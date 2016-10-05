@@ -3,6 +3,8 @@
 
 frappe.ui.form.on('Quality Control Material Acceptance Form', {
 	refresh: function(frm) {
-
+cur_frm.add_fetch("item_code","stock_uom","pack_size");
+cur_frm.add_fetch("item_code","item_name","item_name");
+cur_frm.add_fetch("item_code","description","description");
 	}
 });
