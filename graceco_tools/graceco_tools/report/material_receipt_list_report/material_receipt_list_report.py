@@ -16,6 +16,6 @@ def execute(filters=None):
 		supplier = """ and po.supplier = '{}' """.format(filters.get("supplier"))
 	data = frappe.db.sql("""select po.posting_date,po.name,po.supplier,poi.item_code,poi.item_name,poi.description,poi.received_qty,poi.qty,poi.rejected_qty,poi.amount from `tabPurchase Receipt Item` poi 
 		join `tabPurchase Receipt` po on poi.parent=po.name 
-		where po.docstatus=1 and po.status="Completed" and (po.posting_date between '{}' and '{}') {} {} {} 
-		""".format(filters.get("from"),filters.get("to"),item,customer,territory),as_list=1 )
+		where po.docstatus=1 and po.status="Completed" and (po.posting_date between '{}' and '{}') {} {} 
+		""".format(filters.get("from"),filters.get("to"),item,supplier),as_list=1 )
 	return columns, data
