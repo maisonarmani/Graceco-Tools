@@ -16,5 +16,5 @@ def execute(filters=None):
 	if filters.get("territory"):
 		territory = """ and so.territory = '{}' """.format(filters.get("territory"))
 	data = frappe.db.sql("""select soi.item_code,soi.item_name,soi.qty,soi.amount from `tabSales Order Item` soi 
-		join `tabSales Order` so on soi.parent=so.name where so.docstatus=1 and (so.posting_date between '{}' and '{}') {} {} {} group by soi.item_code""".format(filters.get("from"),filters.get("to"),item,customer,territory),as_list=1 )
+		join `tabSales Order` so on soi.parent=so.name where so.docstatus=1 and (so.transaction_date between '{}' and '{}') {} {} {} group by soi.item_code""".format(filters.get("from"),filters.get("to"),item,customer,territory),as_list=1 )
 	return columns, data
