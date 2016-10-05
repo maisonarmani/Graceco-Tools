@@ -15,6 +15,6 @@ frappe.ui.form.on('Store Bin Card', {
         	frm.doc.receipt_item=[]
         	validated = true;
     	}
-	};
+	}
 
 });
