@@ -17,7 +17,7 @@ def execute(filters=None):
 	if filters.get("shift") != "All":
 		shift = """ and f.shift="{}" """.format(filters.get("shift"))
 	data = frappe.db.sql("""select f.date,f.shift,i.item_name,i.uom,i.qty
-		from `tabFinished Goods Transfer Item` i join `tabFinished Goods Transfer From` f on i.parent=f.name 
+		from `tabFinished Goods Transfer Item` i join `tabFinished Goods Transfer Form` f on i.parent=f.name 
 		join `tabItem` ii on ii.name = i.item_code
 		where f.docstatus =1 and (f.date between "{}" and "{}") {} {} {}
 		""".format(filters.get("from"),filters.get("to"),item,item_group,shift),as_list=1)
