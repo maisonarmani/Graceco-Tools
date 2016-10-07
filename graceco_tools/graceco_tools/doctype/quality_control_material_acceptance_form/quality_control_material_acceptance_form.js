@@ -19,7 +19,7 @@ cur_frm.fields_dict['contact_id'].get_query = function(doc, cdt, cdn) {
 	}
 }
 frappe.ui.form.on_change("Quality Control Material Acceptance Form", "address_id", function(){
-	erpnext.utils.get_address_display(cur_frm, 'address_id', 'address');
+	erpnext.utils.get_address_display(cur_frm, 'address_id', 'address_display');
 });
 frappe.ui.form.on_change("Quality Control Material Acceptance Form", "contact_id", function(){
   erpnext.utils.get_contact_details(cur_frm);	
