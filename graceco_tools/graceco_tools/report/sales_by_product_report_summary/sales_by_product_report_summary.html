@@ -4,13 +4,13 @@
 	{%= __("to") %}
 	{%= dateutil.str_to_user(filters.to) %}
 </h5>
-{% if (filters.item and filters.item!=""){ %}
+{% if (filters.item && filters.item!=""){ %}
 	<h5>Item : {%=filters.item %}</h5>
 {% } %}
-{% if (filters.customer and filters.customer!=""){ %}
+{% if (filters.customer && filters.customer!=""){ %}
 	<h5>Customer : {%=filters.customer %}</h5>
 {% } %}
-{% if (filters.territory and filters.territory!=""){ %}
+{% if (filters.territory && filters.territory!=""){ %}
 	<h5>Territory : {%=filters.territory %}</h5>
 {% } %}
 <hr>

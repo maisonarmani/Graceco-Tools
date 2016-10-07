@@ -1,15 +1,15 @@
 <h2 class="text-center">Product Yield Variance</h2>
 <h5 >Delivery date : {%= dateutil.str_to_user(filters.delivery) %}</h5>
-{% if (filters.item and filters.item!=""){ %}
+{% if (filters.item && filters.item!=""){ %}
 	<h5>Item : {%=filters.item %}</h5>
 {% } %}
-{% if (filters.item_group and filters.item_group!=""){ %}
+{% if (filters.item_group && filters.item_group!=""){ %}
 	<h5>Item Group : {%=filters.item_group %}</h5>
 {% } %}
-{% if (filters.customer and filters.customer!=""){ %}
+{% if (filters.customer && filters.customer!=""){ %}
 	<h5>Customer : {%=filters.customer %}</h5>
 {% } %}
-{% if (filters.territory and filters.territory!=""){ %}
+{% if (filters.territory && filters.territory!=""){ %}
 	<h5>Territory : {%=filters.territory %}</h5>
 {% } %}
 <hr>

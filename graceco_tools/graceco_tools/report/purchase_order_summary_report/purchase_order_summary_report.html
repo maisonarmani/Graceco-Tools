@@ -4,10 +4,10 @@
 	{%= __("to") %}
 	{%= dateutil.str_to_user(filters.to) %}
 </h5>
-{% if (filters.item and filters.item!=""){ %}
+{% if (filters.item && filters.item!=""){ %}
 	<h5>Item : {%=filters.item %}</h5>
 {% } %}
-{% if (filters.supplier and filters.supplier!=""){ %}
+{% if (filters.supplier && filters.supplier!=""){ %}
 	<h5>Supplier : {%=filters.supplier %}</h5>
 {% } %}
 <hr>
