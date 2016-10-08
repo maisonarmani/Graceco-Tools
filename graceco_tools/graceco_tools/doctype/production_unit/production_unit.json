@@ -8,7 +8,7 @@
  "custom": 0, 
  "docstatus": 0, 
  "doctype": "DocType", 
- "document_type": "Document", 
+ "document_type": "Setup", 
  "editable_grid": 1, 
  "fields": [
   {
@@ -72,7 +72,7 @@
  "issingle": 0, 
  "istable": 0, 
  "max_attachments": 0, 
- "modified": "2016-10-03 15:52:46.054683", 
+ "modified": "2016-10-07 16:10:08.137105", 
  "modified_by": "Administrator", 
  "module": "Graceco Tools", 
  "name": "Production Unit", 
