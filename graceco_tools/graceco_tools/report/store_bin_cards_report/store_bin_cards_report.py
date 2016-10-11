@@ -16,7 +16,7 @@ def execute(filters=None):
 	if filters.get("ref_no"):
 		ref_no = """ and ii.ref_no = '{}' """.format(filters.get("ref_no"))
 		ref_no2 = """ and i.ref_no = '{}' """.format(filters.get("ref_no"))
-	frappe.throw("""select pp.name , pp.date as "date , ii.item_code,ii.item_name,ii.ref_no,i.qty,"","",ii.balance_qty
+	frappe.throw("""select pp.name , pp.date as "date" , ii.item_code,ii.item_name,ii.ref_no,ii.qty,"","",ii.balance_qty
 		from `tabStore Bin Card Item` ii 
 		join `tabStore Bin Card` pp on ii.parent=pp.name 
 		where pp.docstatus=1 and (pp.date between "{0}" and  "{1}") {2} {3}
@@ -26,7 +26,7 @@ def execute(filters=None):
 		join `tabStore Bin Card` p on i.parent=p.name 
 		where p.docstatus=1 and (p.date between "{0}" and  "{1}") {4} {5} 
 		order by date""".format(filters.get("from"),filters.get("to"),item,ref_no,item2,ref_no2))
-	data = frappe.db.sql("""select pp.name , pp.date as "date , ii.item_code,ii.item_name,ii.ref_no,i.qty,"","",ii.balance_qty
+	data = frappe.db.sql("""select pp.name , pp.date as "date" , ii.item_code,ii.item_name,ii.ref_no,ii.qty,"","",ii.balance_qty
 		from `tabStore Bin Card Item` ii 
 		join `tabStore Bin Card` pp on ii.parent=pp.name 
 		where pp.docstatus=1 and (pp.date between "{0}" and  "{1}") {2} {3}
