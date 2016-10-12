@@ -11,13 +11,13 @@ def execute(filters=None):
 	receipt_qty = frappe.db.sql("""select sum(ii.qty)
 		from `tabStore Bin Card Item` ii 
 		join `tabStore Bin Card` pp on ii.parent=pp.name 
-		where pp.docstatus=1 and pp.date < "{0}" ii.item_code = '{1}' group by ii.item_code """.format(filters.get("from"),filters.get("item")),as_list=1)
+		where pp.docstatus=1 and pp.date < "{0}" and ii.item_code = '{1}' group by ii.item_code """.format(filters.get("from"),filters.get("item")),as_list=1)
 	for row in receipt_qty:
 		rqty=row[0]
 	issued_qty = frappe.db.sql("""select sum(ii.qty)
 		from `tabStore Bin Card Issue Item` ii 
 		join `tabStore Bin Card` pp on ii.parent=pp.name 
-		where pp.docstatus=1 and pp.date < "{0}" ii.item_code = '{1}' group by ii.item_code """.format(filters.get("from"),filters.get("item")),as_list=1)
+		where pp.docstatus=1 and pp.date < "{0}" and ii.item_code = '{1}' group by ii.item_code """.format(filters.get("from"),filters.get("item")),as_list=1)
 	for row in issued_qty:
 		iqty=row[0]
 	all_data = frappe.db.sql("""select pp.name , pp.date as "date" , ii.item_code,ii.item_name,ii.ref_no,ii.qty,"",""
