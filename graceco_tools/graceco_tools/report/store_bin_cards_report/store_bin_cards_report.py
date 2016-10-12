@@ -3,6 +3,7 @@
 
 from __future__ import unicode_literals
 import frappe
+from frappe.utils import flt
 
 def execute(filters=None):
 	columns, data = ["Store Bin Card No:Link/Store Bin Card:200","Date:Date:200","Item:Link/Item:200","Item Name:Data:200","Receipt Ref No:Data:200","Receipt Qty:Float:100","Issues Ref No:Data:200","Issues Qty:Float:100","Balance Qty:Float:200"], []
@@ -32,6 +33,6 @@ def execute(filters=None):
 		order by date""".format(filters.get("from"),filters.get("to"),filters.get("item")),as_list=1)
 	balance = rqty-iqty
 	for row in all_data:
-		balance = balance+row[5]-row[7]
+		balance = balance+ flt(row[5])-flt(row[7])
 		data.append([row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],balance])
 	return columns, data
