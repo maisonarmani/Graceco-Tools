@@ -32,5 +32,6 @@ def execute(filters=None):
 		order by date""".format(filters.get("from"),filters.get("to"),filters.get("item")),as_list=1)
 	balance = rqty-iqty
 	for row in all_data:
-		data.append([row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],balance+row[5]-row[7]])
+		balance = balance+row[5]-row[7]
+		data.append([row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],balance])
 	return columns, data
