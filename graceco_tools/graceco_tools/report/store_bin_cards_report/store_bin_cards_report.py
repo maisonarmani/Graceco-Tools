@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 import frappe
 
 def execute(filters=None):
-	columns, data = ["Date:Date:200","Item:Link/Item:200","Item Name:Data:200","Receipt Ref No:Data:200","Receipt Qty:Float:100","Issues Ref No:Data:200","Issues Qty:Float:100","Balance Qty:Float:200"], []
+	columns, data = ["Store Bin Card No:Link/Store Bin Card:200","Date:Date:200","Item:Link/Item:200","Item Name:Data:200","Receipt Ref No:Data:200","Receipt Qty:Float:100","Issues Ref No:Data:200","Issues Qty:Float:100","Balance Qty:Float:200"], []
 	item=""
 	ref_no=""
 	item2=""
