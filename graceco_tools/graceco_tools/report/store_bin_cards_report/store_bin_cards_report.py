@@ -25,7 +25,7 @@ def execute(filters=None):
 		join `tabStore Bin Card` pp on ii.parent=pp.name 
 		where pp.docstatus=1 and (pp.date between "{0}" and  "{1}")  and ii.item_code = '{2}' 
 		UNION
-		select p.name , p.date as "date" , i.item_code,i.item_name,"","",ii.ref_no,i.qty
+		select p.name , p.date as "date" , i.item_code,i.item_name,"","",i.ref_no,i.qty
 		from `tabStore Bin Card Issue Item` i 
 		join `tabStore Bin Card` p on i.parent=p.name 
 		where p.docstatus=1 and (p.date between "{0}" and  "{1}")  and i.item_code = '{2}' 
