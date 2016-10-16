@@ -30,12 +30,7 @@ def get_data():
 					"type": "doctype",
 					"name": "Weekly Production Order Form",
 					"description": _("Weekly Production Order Form")
-				},
-				{
-					"type": "doctype",
-					"name": "Store Bin Card",
-					"description": _("Store Bin Card")
-				},
+				}
 			]
 		},
 		{
@@ -73,12 +68,6 @@ def get_data():
 					"type": "report",
 					"name": "Raw Materials Return Report",
 					"doctype": "Raw Materials Return Form",
-					"is_query_report": True,
-				},
-				{
-					"type": "report",
-					"name": "Sales Person-wise Transaction Summary",
-					"doctype": "Sales Order",
 					"is_query_report": True,
 				}
 			]
