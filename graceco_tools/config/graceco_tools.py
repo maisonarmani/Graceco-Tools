@@ -28,8 +28,8 @@ def get_data():
 				},
 				{
 					"type": "doctype",
-					"name": "Weekly Production Order Form ",
-					"description": _("Weekly Production Order Form ")
+					"name": "Weekly Production Order Form",
+					"description": _("Weekly Production Order Form")
 				},
 				{
 					"type": "doctype",
@@ -77,7 +77,7 @@ def get_data():
 				},
 				{
 					"type": "report",
-					"name": "Product Delivery & Distribution Schedule Report",
+					"name": "Sales Person-wise Transaction Summary",
 					"doctype": "Sales Order",
 					"is_query_report": True,
 				}
