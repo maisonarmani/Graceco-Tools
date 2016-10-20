@@ -50,9 +50,9 @@ def get_columns():
 def get_stock_ledger_entries(filters):
 	return frappe.db.sql("""select concat_ws(" ", posting_date, posting_time) as date,
 			item_code, warehouse, actual_qty, qty_after_transaction, incoming_rate, valuation_rate,
-			stock_value, voucher_type, voucher_no, batch_no, serial_no, company
+			stock_value, voucher_type, voucher_no
 		from `tabStock Ledger Entry` sle
-		where company = %(company)s and
+		where 
 			posting_date between %(from_date)s and %(to_date)s
 			{sle_conditions}
 			order by posting_date asc, posting_time asc, name asc"""\
