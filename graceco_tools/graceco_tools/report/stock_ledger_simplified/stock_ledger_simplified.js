@@ -3,7 +3,6 @@
 
 frappe.query_reports["Stock Ledger Simplified"] = {
 	"filters": [
-		"filters": [
 		{
 			"fieldname":"from_date",
 			"label": __("From Date"),
