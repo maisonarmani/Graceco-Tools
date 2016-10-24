@@ -1,0 +1,36 @@
+<div style="margin-bottom: 7px;" class="text-center">
+	{%= frappe.boot.letter_heads[filters.letter_head  || frappe.defaults.get_default("letter_head")] %}
+</div>
+<h2 class="text-center">Fixed Asset Register Report</h2>
+{% if (filters.asset_category && filters.asset_category!=""){ %}
+	<h5>Asset Category : {%=filters.asset_category %}</h5>
+{% } %}
+<hr>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th style="width: 15%">Item Code</th>
+			<th style="width: 20%">Asset Name</th>
+			<th style="width: 15%">Asset Category</th>
+			<th style="width: 15%">Warehouse</th>
+			<th style="width: 15%">Purchase Date</th>
+			<th style="width: 20%">Book Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for(var i=0,l=data.length; i<l; i++) { %}
+			<tr>
+				{% 
+				var row = data[i]; %}
+					<td >{%= row["Item Code"] %}</td>
+					<td >{%= row["Asset Name"] %}</td>
+					<td >{%= row["Asset Category"] %}</td>
+					<td >{%= row["Warehouse"] %}</td>
+					<td>{%= dateutil.str_to_user(row["Purchase Date"]) %}</td>
+					<td >{%= format_currency(row["Book Value"]) %}</td>
+			</tr>
+		{% } %}
+	</tbody>
+</table>
+
+<p class="text-right text-muted">Printed On {%= dateutil.str_to_user(dateutil.get_datetime_as_string()) %}</p>

@@ -5,5 +5,11 @@ from __future__ import unicode_literals
 import frappe
 
 def execute(filters=None):
-	columns, data = [], []
+	#Item Code	Asset Name	Asset Catergory	Warehouse	Purchase Date	Value (After Depreciation)
+	columns, data = ["Item Code:Link/Item:200","Asset Name::200","Asset Catergory:Link/Asset Catergory:200","Warehouse:Link/Warehouse:200","Purchase Date:Date:200","Book Value:Currency:200"], []
+	where=""
+	if filters.get("asset_category"):
+		where = """ and asset_category = "{}" """.format(filters.get("asset_category"))
+	data = frappe.db.sql("""select item_code,asset_name,asset_category,warehouse,purchase_date,value_after_depreciation 
+		from tabAsset where docstatus=1 {}""".format(where),as_list=1)
 	return columns, data
