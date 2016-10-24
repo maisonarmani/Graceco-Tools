@@ -13,7 +13,7 @@ def execute(filters=None):
 	from `tabPurchase Invoice Item` d 
 	join `tabPurchase Invoice` p on d.parent=p.name
 	where p.docstatus=1
-	and (p.posting_time between "{}" and "{}")
+	and (p.posting_date between "{}" and "{}")
 	and  d.item_code = "{}"
 	{} """.format(filters.get("from"),filters.get("to"),filters.get("item"),supplier),as_list=1)
 	return columns, data
