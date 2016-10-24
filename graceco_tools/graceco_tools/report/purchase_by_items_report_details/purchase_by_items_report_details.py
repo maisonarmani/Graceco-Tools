@@ -9,7 +9,7 @@ def execute(filters=None):
 	supplier=""
 	if filters.get("supplier"):
 		supplier=""" and p.supplier ="{}" """.format(filters.get("supplier"))
-	data = frappe.db.sql("""select p.posting_date,p.name,p.supplier,i.qty,i.uom,i.amount
+	data = frappe.db.sql("""select p.posting_date,p.name,p.supplier,d.qty,d.uom,d.amount
 	from `tabPurchase Invoice Item` d 
 	join `tabPurchase Invoice` p on d.parent=p.name
 	where p.docstatus=1
