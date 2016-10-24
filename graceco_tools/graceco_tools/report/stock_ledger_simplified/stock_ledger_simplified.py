@@ -4,6 +4,7 @@
 from __future__ import unicode_literals
 import frappe
 from frappe import _
+from frappe.utils import flt
 
 def execute(filters=None):
 	columns = get_columns()
@@ -25,9 +26,9 @@ def execute(filters=None):
 			item_detail.item_group,
 			sle.warehouse,
 			item_detail.stock_uom,
-			(sle.qty_after_transaction-sle.actual_qty), 
-			sle.actual_qty, 
-			sle.qty_after_transaction,
+			flt(sle.qty_after_transaction-sle.actual_qty,2), 
+			flt(sle.actual_qty,2), 
+			flt(sle.qty_after_transaction,2),
 			sle.voucher_type, 
 			sle.voucher_no])
 			
