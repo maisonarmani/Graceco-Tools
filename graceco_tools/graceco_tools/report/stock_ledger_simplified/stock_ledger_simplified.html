@@ -21,13 +21,11 @@
 	<thead>
 		<tr>
 			<th style="width: 15%;">Date</th>
-			<th style="width: 15%;">Item Name</th>
-			<th style="width: 10%;">Item Group</th>
-			<th style="width: 10%;">Warehouse</th>
+			<th style="width: 30%;">Item Name</th>
 			<th style="width: 5%;">UOM</th>
-			<th style="width: 12%;">Opening Qty</th>
-			<th style="width: 6%;">Qty</th>
-			<th style="width: 12%;">Balance Qty</th>
+			<th style="width: 15%;">Opening Qty</th>
+			<th style="width: 10%;">Qty</th>
+			<th style="width: 15%;">Balance Qty</th>
 			<th style="width: 15%;">Voucher</th>
 		</tr>
 
@@ -40,8 +38,6 @@
 				var row = data[i]; %}
 					<td>{%= dateutil.str_to_user(row["Date"]) %}</td>
 					<td >{%= row["Item Name"] %}</td>
-					<td >{%= row["Item Group"] %}</td>
-					<td >{%= row["Warehouse"] %}</td>
 					<td >{%= row["Stock UOM"] %}</td>
 					<td >{%= row["Opening Qty"] %}</td>
 					<td >{%= row["Qty"] %}</td>
