@@ -23,6 +23,13 @@ frappe.query_reports["Purchase Order Status Report"] = {
 			"fieldtype": "Link",
 			"options": "Supplier",
 			"reqd":0
+		},
+		{
+			"fieldname":"purchase_order",
+			"label": __("Purchase Order"),
+			"fieldtype": "Link",
+			"options": "Purchase Order",
+			"reqd":0
 		}
 	]
 }

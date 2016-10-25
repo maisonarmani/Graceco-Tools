@@ -13,11 +13,10 @@
 <table class="table table-bordered">
 	<thead>
 		<tr>
-			<th style="width: 15%">Date</th>
+			<th style="width: 20%">Date</th>
 			<th style="width: 15%">Purchase Order</th>
 			<th style="width: 15%">Supplier</th>
-			<th style="width: 30%">Item Name</th>
-			<th style="width: 15%">Status</th>
+			<th style="width: 40%">Status</th>
 			<th style="width: 10%">Updated by</th>
 		</tr>
 	</thead>
@@ -29,7 +28,6 @@
 					<td>{%= dateutil.str_to_user(row["Date"]) %}</td>
 					<td>{%= row["Purchase Order"] %}</td>
 					<td>{%= row["Supplier"] %}</td>
-					<td >{%= row["Item Name"] %}</td>
 					<td >{%= row["Status"] %}</td>
 					<td >{%= row["Updated By"] %}</td>
 
