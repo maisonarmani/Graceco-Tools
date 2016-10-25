@@ -16,6 +16,13 @@ frappe.query_reports["Payment Entry Report"] = {
 			"fieldtype": "Date",
 			"default": get_today(),
 			"reqd":1
+		},
+		{
+			"fieldname":"payment_type",
+			"label": __("Payment Type"),
+			"fieldtype": "Select",
+			"options": "All\nPay\nReceive\nInternal Transfer",
+			"reqd":1
 		}
 	]
 }
