@@ -7,7 +7,7 @@ import frappe
 def execute(filters=None):
 	#Date | Supplier | Item Description | Status Report | Updated By
 	columns, data = ["Date:Date:200","Purchase Order:Link/Purchase Order:200","Supplier:Link/Supplier:200","Item Name:Data:200","Status:Data:200","Updated By:Data:200"], []
-	supplier
+	supplier=""
 	if filters.get("supplier"):
 		supplier=""" and p.supplier = "{}" """.format(filters.get("supplier"))
 	data = frappe.db.sql("""select s.date,s.purchase_order,p.supplier,i.item_name,s.status,s.updated_by
