@@ -14,5 +14,5 @@ def execute(filters=None):
 	if filters.get("supplier"):
 		supplier = """ and so.supplier = '{}' """.format(filters.get("supplier"))
 	data = frappe.db.sql("""select soi.item_code,soi.item_name,sum(soi.qty),sum(soi.amount) from `tabPurchase Invoice Item` soi 
-		join `tabPurchase Invoice` so on soi.parent=so.name where so.docstatus=1 and (so.posting_date between '{}' and '{}') {} {} {} group by soi.item_code""".format(filters.get("from"),filters.get("to"),item,supplier),as_list=1 )
+		join `tabPurchase Invoice` so on soi.parent=so.name where so.docstatus=1 and (so.posting_date between '{}' and '{}') {} {} group by soi.item_code""".format(filters.get("from"),filters.get("to"),item,supplier),as_list=1 )
 	return columns, data
