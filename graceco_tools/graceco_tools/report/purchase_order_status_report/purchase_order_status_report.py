@@ -10,7 +10,7 @@ def execute(filters=None):
 	supplier=""
 	if filters.get("supplier"):
 		supplier=""" and p.supplier = "{}" """.format(filters.get("supplier"))
-	data = frappe.db.sql("""select s.date,s.purchase_order,p.supplier,i.item_name,s.status,s.updated_by
+	data = frappe.db.sql("""select s.date,s.purchase_order,p.supplier,CONCAT("(", i.item_code,")","-",i.item_name),s.status,s.updated_by
 	from `tabPurchase Order Item` i 
 	join `tabPurchase Order` p on i.parent = p.name
 	join `tabPurchase Order Status` s on i.parent = s.purchase_order
