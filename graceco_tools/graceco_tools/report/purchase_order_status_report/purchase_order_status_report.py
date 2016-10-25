@@ -10,9 +10,8 @@ def execute(filters=None):
 	supplier=""
 	if filters.get("supplier"):
 		supplier=""" and p.supplier = "{}" """.format(filters.get("supplier"))
-	data = frappe.db.sql("""select s.date,s.purchase_order,p.supplier,CONCAT(i.description," - (", i.item_name,")"),s.status,s.updated_by
-	from `tabPurchase Order Item` i 
-	join `tabPurchase Order` p on i.parent = p.name
-	join `tabPurchase Order Status` s on i.parent = s.purchase_order
-	where s.docstatus=1 and p.docstatus=1 and (s.date between "{}" and "{}") {} """.format(filters.get("from"),filters.get("to"),supplier),as_list=1)
+	data = frappe.db.sql("""select s.modified,s.purchase_order,p.supplier,s.status,s.modified_by
+	from `tabPurchase Order Status` s 
+	join `tabPurchase Order` p on p.name = s.purchase_order
+	where s.docstatus=1 and p.docstatus=1 and (s.modified between "{}" and "{}") {} """.format(filters.get("from"),filters.get("to"),supplier),as_list=1)
 	return columns, data
