@@ -9,6 +9,9 @@
 {% if (filters.supplier && filters.supplier!=""){ %}
 	<h5>Supplier : {%=filters.supplier %}</h5>
 {% } %}
+{% if (filters.purchase_order && filters.purchase_order!=""){ %}
+	<h5>Purchase Order : {%=filters.purchase_order %}</h5>
+{% } %}
 <hr>
 <table class="table table-bordered">
 	<thead>

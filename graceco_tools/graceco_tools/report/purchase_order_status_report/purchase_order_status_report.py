@@ -6,7 +6,7 @@ import frappe
 
 def execute(filters=None):
 	#Date | Supplier | Item Description | Status Report | Updated By
-	columns, data = ["Date:Date:200","Purchase Order:Link/Purchase Order:125","Supplier:Link/Supplier:150","Item Name:Data:400","Status:Data:200","Updated By:Data:200"], []
+	columns, data = ["Date:Date:200","Purchase Order:Link/Purchase Order:125","Supplier:Link/Supplier:150","Status:Data:300","Updated By:Data:150"], []
 	supplier=""
 	purchase_order=""
 	if filters.get("supplier"):

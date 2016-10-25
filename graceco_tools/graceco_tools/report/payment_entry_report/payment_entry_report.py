@@ -10,5 +10,5 @@ def execute(filters=None):
 	if filters.get("payment_type") and filters.get("payment_type")!="All":
 		payment_type = """ and payment_type = "{}"  """.format(filters.get("payment_type"))
 	data = frappe.db.sql("""select posting_date,party,payment_type,IF(party_type="Customer",received_amount,paid_amount),name 
-		from `tabPayment Entry` where docstatus=1 and (posting_date between "{}" and "{}") """.format(filters.get("from"),filters.get("to")),as_list=1)
+		from `tabPayment Entry` where docstatus=1 and (posting_date between "{}" and "{}") {} """.format(filters.get("from"),filters.get("to"),payment_type),as_list=1)
 	return columns, data
