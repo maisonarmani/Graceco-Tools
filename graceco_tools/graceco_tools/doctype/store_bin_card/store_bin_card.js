@@ -9,17 +9,19 @@ frappe.ui.form.on('Store Bin Card', {
 	},
 	validate: function(frm) {
     	if (frm.doc.action == "Receipt") {
-        	frm.doc.issue_item=[]
-        	validated = true;
+        	frm.doc.issue_item=[];
+        	
         	for (var i=0;i<frm.doc.receipt_item.length;i++){
         		if (frm.doc.receipt_item[i].ref_doc!="Opening Stock" && frm.doc.receipt_item[i].ref_no=="") {
-        			validated=false;
         			msgprint("Please enter the Reference No except for the Opening Stock");
+        			validated=false;
+        			
+        			return;
         		};
         	}
-        	
+        	validated = true;
     	}else{
-        	frm.doc.receipt_item=[]
+        	frm.doc.receipt_item=[];
         	validated = true;
     	}
 	}
