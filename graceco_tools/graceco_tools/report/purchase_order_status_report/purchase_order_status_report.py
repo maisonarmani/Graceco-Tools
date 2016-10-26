@@ -16,5 +16,5 @@ def execute(filters=None):
 	data = frappe.db.sql("""select s.modified,s.purchase_order,p.supplier,s.status,s.modified_by
 	from `tabPurchase Order Status` s 
 	join `tabPurchase Order` p on p.name = s.purchase_order
-	where s.docstatus=1 and p.docstatus=1 and (s.modified between "{}" and "{}") {} {} """.format(filters.get("from"),filters.get("to"),supplier,purchase_order),as_list=1)
+	where s.docstatus=1 and p.docstatus=1 and (CAST(s.modified AS DATE) between "{}" and "{}") {} {} """.format(filters.get("from"),filters.get("to"),supplier,purchase_order),as_list=1)
 	return columns, data
