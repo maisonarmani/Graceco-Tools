@@ -2,7 +2,7 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Call Log', {
-	refresh: function(frm) {
-
+	setup: function(frm) {
+		frm.doc.caller=frappe.user_info().fullname;
 	}
 });

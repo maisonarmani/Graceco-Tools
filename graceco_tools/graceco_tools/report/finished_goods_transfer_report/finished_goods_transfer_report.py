@@ -11,7 +11,6 @@ def execute(filters=None):
 	item_group=""
 	shift=""
 	if filters.get("item"):
-
 		item = """ and i.item_code = "{}" """.format(filters.get("item"))
 	if filters.get("item_group"):
 		item_group = """ and ii.item_group = "{}" """.format(filters.get("item_group"))
