@@ -15,7 +15,7 @@ def execute(filters=None):
 	if filters.get("call_type"):
 		call_type = """ and call_type = "{}" """.format(filters.get("call_type"))
 	if filters.get("call_purpose"):
-		call_purpose = """ and call_purpose = "{}" """.format(filters.get("call_purpose"))\
+		call_purpose = """ and call_purpose = "{}" """.format(filters.get("call_purpose"))
 	data = frappe.db.sql("""select date,customer,call_type,call_purpose,customer_comment,sales_admin_remark
 	from `tabCall Log` where docstatus=1 and (date between "{}" and "{}") {} {} {} 
 	""".format(filters.get("from"),filters.get("to"),customer,call_purpose,call_type),as_list=1)
