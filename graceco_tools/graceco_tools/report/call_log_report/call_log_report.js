@@ -8,21 +8,9 @@ frappe.query_reports["Call Log Report"] = {
 			"label": __("Customer"),
 			"fieldtype": "Link",
 			"options": "Customer",
-			"reqd":0
-		},
-		{
-			"fieldname":"from",
-			"label": __("From Date"),
-			"fieldtype": "Datetime",
 			"reqd":1
 		},
-		{
-			"fieldname":"to",
-			"label": __("To Date"),
-			"fieldtype": "Datetime",
-			"default": get_today(),
-			"reqd":1
-		},
+		
 		{
 			"fieldname":"call_type",
 			"label": __("Call Type"),
