@@ -7,7 +7,6 @@ frappe.query_reports["Call Log Report"] = {
 			"fieldname":"from",
 			"label": __("From Date"),
 			"fieldtype": "Datetime",
-			"width": "80",
 			"reqd":1
 		},
 		{
