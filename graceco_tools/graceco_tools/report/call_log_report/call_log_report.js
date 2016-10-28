@@ -4,6 +4,19 @@
 frappe.query_reports["Call Log Report"] = {
 	"filters": [
 		{
+			"fieldname":"from",
+			"label": __("From Date"),
+			"fieldtype": "Datetime",
+			"reqd":1
+		},
+		{
+			"fieldname":"to",
+			"label": __("To Date"),
+			"fieldtype": "Datetime",
+			"default": get_today(),
+			"reqd":1
+		},
+		{
 			"fieldname":"customer",
 			"label": __("Customer"),
 			"fieldtype": "Link",
