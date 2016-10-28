@@ -8,24 +8,24 @@ def execute(filters=None):
 	columns, data = ["Petty Cash Log:Link/Petty Cash Log:200","Date:Date:200","Type::100","Reference:Data:200","Referece No:Dynamic Link/Reference:200","Opening:Currency:200","Receipt:Currency:200","Payment:Currency:200","Balance:Currency:200"], []
 	rqty=0
 	pqty=0
-	receipt_qty = frappe.db.sql("""select sum(ii.amount)
+	receipt_qty = frappe.db.sql("""select sum(ii.currency)
 		from `tabPetty Cash Log Item Sales` ii 
 		join `tabPetty Cash Log` pp on ii.parent=pp.name 
 		where pp.docstatus=1 and pp.date < "{0}" group by pp.transaction_type """.format(filters.get("from")),as_list=1)
 	for row in receipt_qty:
 		rqty+=row[0]
-	payment_qty = frappe.db.sql("""select sum(ii.amount)
+	payment_qty = frappe.db.sql("""select sum(ii.currency)
 		from `tabPetty Cash Log Item` ii 
 		join `tabPetty Cash Log` pp on ii.parent=pp.name 
 		where pp.docstatus=1 and pp.date < "{0}" group by pp.transaction_type """.format(filters.get("from")),as_list=1)
 	for row in payment_qty:
 		pqty+=row[0]
-	all_data = frappe.db.sql("""select pp.name , pp.date as "date" ,pp.transaction_type,ii.ref_doc,ii.ref_no,ii.qty,""
+	all_data = frappe.db.sql("""select pp.name , pp.date as "date" ,pp.transaction_type,ii.ref_doc,ii.ref_no,ii.currency,""
 		from `tabPetty Cash Log Item Sales` ii 
 		join `tabPetty Cash Log` pp on ii.parent=pp.name 
 		where pp.docstatus=1 and (pp.date between "{0}" and  "{1}")  
 		UNION
-		select p.name , p.date as "date" ,p.transaction_type,i.ref_doc,i.ref_no,"",i.qty
+		select p.name , p.date as "date" ,p.transaction_type,i.ref_doc,i.ref_no,"",i.currency
 		from `tabPetty Cash Log Item` i 
 		join `tabPetty Cash Log` p on i.parent=p.name 
 		where p.docstatus=1 and (p.date between "{0}" and  "{1}") 
