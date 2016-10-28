@@ -4,7 +4,7 @@
 frappe.ui.form.on('Petty Cash Log', {
 	refresh: function(frm) {
 
-	},,
+	},
     validate:function(frm) {
         if (frm.doc.transaction_type == "Receipt") {
             frm.doc.buying=[];
