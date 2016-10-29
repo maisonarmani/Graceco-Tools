@@ -34,5 +34,5 @@ def execute(filters=None):
 	for row in all_data:
 		bb=balance
 		balance = balance+ flt(row[5])-flt(row[6])
-		data.append([row[0],row[1],row[2],row[3],bb,row[4],bb,row[5],row[6],balance])
+		data.append([row[0],row[1],row[2],row[3],row[4],bb,row[5],row[6],balance])
 	return columns, data
