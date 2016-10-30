@@ -3,6 +3,7 @@
 
 from __future__ import unicode_literals
 import frappe
+from frappe.utils import flt
 
 def execute(filters=None):
 	columns, data = ["Petty Cash Log:Link/Petty Cash Log:200","Date:Date:200","Type::100","Reference:Data:200","Referece No:Dynamic Link/Reference:200","Opening:Currency:200","Receipt:Currency:200","Payment:Currency:200","Balance:Currency:200"], []

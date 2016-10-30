@@ -16,6 +16,6 @@ frappe.query_reports["Petty Cash Log Report"] = {
 			"fieldtype": "Date",
 			"default": get_today(),
 			"reqd":1
-		}
+		},
 	]
 }
