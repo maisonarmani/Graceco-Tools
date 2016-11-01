@@ -17,5 +17,11 @@ frappe.query_reports["Petty Cash Log Report"] = {
 			"default": get_today(),
 			"reqd":1
 		},
+		{
+			"fieldname":"type",
+			"label":__("Payment Type").
+			"fieldname":"Select",
+			"options":"All\nPayment\nReceipt"
+		}
 	]
 }
