@@ -9,18 +9,19 @@ def execute(filters=None):
 	columns, data = ["Store Bin Card No:Link/Store Bin Card:200","Date:Date:200","Item:Link/Item:200","Item Name:Data:200","Opening Qty:float:200","Receipt Ref No:Data:200","Receipt Qty:Float:100","Issues Ref No:Data:200","Issues Qty:Float:100","Balance Qty:Float:200"], []
 	rqty=0
 	iqty=0
-	receipt_qty = frappe.db.sql("""select sum(ii.qty)
-		from `tabStore Bin Card Item` ii 
-		join `tabStore Bin Card` pp on ii.parent=pp.name 
-		where pp.docstatus=1 and pp.date < "{0}" and ii.item_code = '{1}' group by ii.item_code """.format(filters.get("from"),filters.get("item")),as_list=1)
-	for row in receipt_qty:
-		rqty=row[0]
-	issued_qty = frappe.db.sql("""select sum(ii.qty)
-		from `tabStore Bin Card Issue Item` ii 
-		join `tabStore Bin Card` pp on ii.parent=pp.name 
-		where pp.docstatus=1 and pp.date < "{0}" and ii.item_code = '{1}' group by ii.item_code """.format(filters.get("from"),filters.get("item")),as_list=1)
-	for row in issued_qty:
-		iqty=row[0]
+	if filters.get("from") and filters.get("from")!="":
+		receipt_qty = frappe.db.sql("""select sum(ii.qty)
+			from `tabStore Bin Card Item` ii 
+			join `tabStore Bin Card` pp on ii.parent=pp.name 
+			where pp.docstatus=1 and pp.date < "{0}" and ii.item_code = '{1}' group by ii.item_code """.format(filters.get("from"),filters.get("item")),as_list=1)
+		for row in receipt_qty:
+			rqty+=row[0]
+		issued_qty = frappe.db.sql("""select sum(ii.qty)
+			from `tabStore Bin Card Issue Item` ii 
+			join `tabStore Bin Card` pp on ii.parent=pp.name 
+			where pp.docstatus=1 and pp.date < "{0}" and ii.item_code = '{1}' group by ii.item_code """.format(filters.get("from"),filters.get("item")),as_list=1)
+		for row in issued_qty:
+			iqty+=row[0]
 	all_data = frappe.db.sql("""select pp.name , pp.date as "date" , ii.item_code,ii.item_name,ii.ref_no,ii.qty,"",""
 		from `tabStore Bin Card Item` ii 
 		join `tabStore Bin Card` pp on ii.parent=pp.name 

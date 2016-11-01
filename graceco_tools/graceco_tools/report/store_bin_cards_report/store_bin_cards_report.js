@@ -8,14 +8,14 @@ frappe.query_reports["Store Bin Cards Report"] = {
 			"label": __("From Date"),
 			"fieldtype": "Date",
 			"width": "80",
-			"reqd":1
+			"reqd":0
 		},
 		{
 			"fieldname":"to",
 			"label": __("To Date"),
 			"fieldtype": "Date",
 			"default": get_today(),
-			"reqd":1
+			"reqd":0
 		},
 		{
 			"fieldname":"item",
