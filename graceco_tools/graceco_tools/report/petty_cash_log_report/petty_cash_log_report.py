@@ -10,7 +10,6 @@ def execute(filters=None):
 	rqty=0
 	pqty=0
 	all_data=[]
-	payment_type=""" "Payment","Receipt" """
 	if filters.get("type")=="Payment":
 		all_data = frappe.db.sql("""select pp.name , pp.date as "date" ,pp.transaction_type,ii.ref_doc,ii.ref_no,ii.currency,""
 			from `tabPetty Cash Log Item Sales` ii 
@@ -18,12 +17,11 @@ def execute(filters=None):
 			where pp.docstatus=1 and (pp.date between "{0}" and  "{1}")  
 			order by date""".format(filters.get("from"),filters.get("to")),as_list=1)
 	elif filters.get("type")=="Receipt":
-		all_data = frappe.db.sql("""
-			select p.name , p.date as "date" ,p.transaction_type,i.ref_doc,i.ref_no,"",i.currency
+		all_data = frappe.db.sql("""select p.name , p.date as "date" ,p.transaction_type,i.ref_doc,i.ref_no,"",i.currency
 			from `tabPetty Cash Log Item` i 
 			join `tabPetty Cash Log` p on i.parent=p.name 
 			where p.docstatus=1 and (p.date between "{0}" and  "{1}") 
-			order by date""".format(filters.get("from"),filters.get("to"),filters.get("item")),as_list=1)
+			order by date""".format(filters.get("from"),filters.get("to")),as_list=1)
 	else:
 		receipt_qty = frappe.db.sql("""select sum(ii.currency)
 			from `tabPetty Cash Log Item Sales` ii 
