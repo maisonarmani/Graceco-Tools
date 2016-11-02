@@ -13,6 +13,9 @@
 {% if (filters.supplier && filters.supplier!=""){ %}
 	<h5>Supplier : {%=filters.supplier %}</h5>
 {% } %}
+{% if (filters.created && filters.created!=""){ %}
+	<h5>Created By : {%=filters.created %}</h5>
+{% } %}
 <hr>
 <table class="table table-bordered">
 	<thead>

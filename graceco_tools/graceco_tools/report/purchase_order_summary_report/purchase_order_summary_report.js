@@ -30,6 +30,12 @@ frappe.query_reports["Purchase Order Summary Report"] = {
 			"fieldtype": "Link",
 			"options": "Item",
 			"reqd":0
+		},
+		{
+			"fieldname":"created",
+			"label": __("Created By"),
+			"fieldtype": "Data",
+			"reqd":0
 		}
 	]
 }
