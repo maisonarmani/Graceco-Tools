@@ -10,5 +10,12 @@ def get_data():
 			"icon": "octicon octicon-file-directory",
 			"type": "module",
 			"label": _("Production")
+		},
+		{
+			"module_name": "Reports",
+			"color": "#bdc3c7",
+			"icon": "octicon octicon-file-checklist",
+			"type": "module",
+			"label": _("Reports")
 		}
 	]

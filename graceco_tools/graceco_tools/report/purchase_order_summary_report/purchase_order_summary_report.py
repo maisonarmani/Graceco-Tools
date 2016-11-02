@@ -14,7 +14,7 @@ def execute(filters=None):
 	if filters.get("supplier"):
 		supplier = """ and po.supplier = '{}' """.format(filters.get("supplier"))
 	if filters.get("created"):
-		owner=" and po.owner='{}' ".format(filters.get("created"))
+		owner=" and po.owner like '%{}%' ".format(filters.get("created"))
 	data = frappe.db.sql("""select po.transaction_date,po.name,po.supplier,poi.item_code,poi.item_name,poi.qty,poi.amount from `tabPurchase Order Item` poi 
 		join `tabPurchase Order` po on poi.parent=po.name 
 		where po.docstatus=1 and po.workflow_state="Approved" and (po.transaction_date between '{}' and '{}') {} {} {} 
