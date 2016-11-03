@@ -16,5 +16,6 @@ def execute(filters=None):
 			) sd on s.item_code=sd.item_code and addtime(s.posting_date,s.posting_time)=sd.latest
 		join `tabItem Reorder` i on i.parent=s.item_code and i.warehouse = "{0}"
 		join `tabItem` it on it.item_code=s.item_code
-		""".format(filters.get("warehouse")), as_dict=1)
+		""".format(filters.get("warehouse")), as_list=1)
 	return columns, data
+

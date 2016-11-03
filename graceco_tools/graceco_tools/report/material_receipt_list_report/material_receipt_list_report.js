@@ -3,7 +3,7 @@
 
 frappe.query_reports["Material Receipt List Report"] = {
 	"filters": [
-{
+		{
 			"fieldname":"from",
 			"label": __("From Date"),
 			"fieldtype": "Date",
