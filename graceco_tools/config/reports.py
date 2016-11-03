@@ -179,27 +179,9 @@ def get_data():
 				},
 				{
 					"type": "report",
-					"name": "Payment Period Based On Invoice Date",
-					"is_query_report": True,
-					"doctype": "Journal Entry"
-				},
-				{
-					"type": "report",
 					"name": "Sales Partners Commission",
 					"is_query_report": True,
 					"doctype": "Sales Invoice"
-				},
-				{
-					"type": "report",
-					"name": "Item-wise Sales Register",
-					"is_query_report": True,
-					"doctype": "Sales Invoice"
-				},
-				{
-					"type": "report",
-					"name": "Item-wise Purchase Register",
-					"is_query_report": True,
-					"doctype": "Purchase Invoice"
 				},
 				{
 					"type": "report",
@@ -225,24 +207,6 @@ def get_data():
 			"label": _("Purchasing"),
 			"items": [
 				{
-					"type": "page",
-					"name": "purchase-analytics",
-					"label": _("Purchase Analytics"),
-					"icon": "icon-bar-chart",
-				},
-				{
-					"type": "report",
-					"is_query_report": True,
-					"name": "Supplier-Wise Sales Analytics",
-					"doctype": "Stock Ledger Entry"
-				},
-				{
-					"type": "report",
-					"is_query_report": True,
-					"name": "Purchase Order Trends",
-					"doctype": "Purchase Order"
-				},
-				{
 					"type": "report",
 					"is_query_report": True,
 					"name": "Purchase Order Status Report",
@@ -262,19 +226,7 @@ def get_data():
 				{
 					"type": "report",
 					"is_query_report": True,
-					"name": "Items To Be Requested",
-					"doctype": "Item"
-				},
-				{
-					"type": "report",
-					"is_query_report": True,
 					"name": "Requested Items To Be Ordered",
-					"doctype": "Material Request"
-				},
-				{
-					"type": "report",
-					"is_query_report": True,
-					"name": "Material Requests for which Supplier Quotations are not created",
 					"doctype": "Material Request"
 				},
 				{
@@ -490,20 +442,10 @@ def get_data():
 					"doctype": "Sales Person",
 				},
 				{
-					"type": "doctype",
-					"name": "Call Log",
-					"description": _("Call Log")
-				},
-				{
 					"type": "report",
 					"name": "Call Log Report",
 					"is_query_report": True,
 					"doctype": "Call Log",
-				},
-				{
-					"type": "doctype",
-					"name": "Daily Route Activity",
-					"description": _("Daily Route Activity."),
 				},
 				{
 					"type": "report",
@@ -512,20 +454,10 @@ def get_data():
 					"doctype": "Daily Route Activity",
 				},
 				{
-					"type": "doctype",
-					"name": "Outlet Survey",
-					"description": _("Outlet Survey."),
-				},
-				{
 					"type": "report",
 					"name": "Outlet Survey Report",
 					"route": "query-report/Outlet Survey Report",
 					"doctype": "Outlet Survey",
-				},
-				{
-					"type": "doctype",
-					"name": "Performance Assessment Form",
-					"description": _("Performance Assessment Form."),
 				},
 				{
 					"type": "report",
@@ -558,43 +490,6 @@ def get_data():
 					"doctype": "Sales Order"
 				},
 				{
-					"type": "page",
-					"name": "sales-analytics",
-					"label": _("Sales Analytics"),
-					"icon": "icon-bar-chart",
-				},
-				{
-					"type": "page",
-					"name": "sales-funnel",
-					"label": _("Sales Funnel"),
-					"icon": "icon-bar-chart",
-				},
-				{
-					"type": "report",
-					"is_query_report": True,
-					"name": "Customer Acquisition and Loyalty",
-					"doctype": "Customer",
-					"icon": "icon-bar-chart",
-				},
-				{
-					"type": "report",
-					"is_query_report": True,
-					"name": "Quotation Trends",
-					"doctype": "Quotation"
-				},
-				{
-					"type": "report",
-					"is_query_report": True,
-					"name": "Sales Order Trends",
-					"doctype": "Sales Order"
-				},
-				{
-					"type": "report",
-					"is_query_report": True,
-					"name": "Lead Details",
-					"doctype": "Lead"
-				},
-				{
 					"type": "report",
 					"is_query_report": True,
 					"name": "Customer Addresses And Contacts",
@@ -609,37 +504,7 @@ def get_data():
 				{
 					"type": "report",
 					"is_query_report": True,
-					"name": "Sales Person-wise Transaction Summary",
-					"doctype": "Sales Order"
-				},
-				{
-					"type": "report",
-					"is_query_report": True,
-					"name": "Item-wise Sales History",
-					"doctype": "Item"
-				},
-				{
-					"type": "report",
-					"is_query_report": True,
-					"name": "BOM Search",
-					"doctype": "BOM"
-				},
-				{
-					"type": "report",
-					"is_query_report": True,
 					"name": "Inactive Customers",
-					"doctype": "Sales Order"
-				},
-				{
-					"type": "report",
-					"is_query_report": True,
-					"name": "Available Stock for Packing Items",
-					"doctype": "Item",
-				},
-				{
-					"type": "report",
-					"is_query_report": True,
-					"name": "Pending SO Items For Purchase Request",
 					"doctype": "Sales Order"
 				},
 				{
@@ -709,45 +574,6 @@ def get_data():
 				},
 				{
 					"type": "report",
-					"name": "Serial No Service Contract Expiry",
-					"doctype": "Serial No"
-				},
-				{
-					"type": "report",
-					"name": "Serial No Status",
-					"doctype": "Serial No"
-				},
-				{
-					"type": "report",
-					"name": "Serial No Warranty Expiry",
-					"doctype": "Serial No"
-				},
-				{
-					"type": "report",
-					"is_query_report": False,
-					"name": "Item-wise Price List Rate",
-					"doctype": "Item Price",
-				},
-				{
-					"type": "page",
-					"name": "stock-analytics",
-					"label": _("Stock Analytics"),
-					"icon": "icon-bar-chart"
-				},
-				{
-					"type": "report",
-					"is_query_report": True,
-					"name": "Delivery Note Trends",
-					"doctype": "Delivery Note"
-				},
-				{
-					"type": "report",
-					"is_query_report": True,
-					"name": "Purchase Receipt Trends",
-					"doctype": "Purchase Receipt"
-				},
-				{
-					"type": "report",
 					"is_query_report": True,
 					"name": "Ordered Items To Be Delivered",
 					"doctype": "Delivery Note"
@@ -757,30 +583,6 @@ def get_data():
 					"is_query_report": True,
 					"name": "Purchase Order Items To Be Received",
 					"doctype": "Purchase Receipt"
-				},
-				{
-					"type": "report",
-					"name": "Item Shortage Report",
-					"route": "Report/Bin/Item Shortage Report",
-					"doctype": "Purchase Receipt"
-				},
-				{
-					"type": "report",
-					"is_query_report": True,
-					"name": "Requested Items To Be Transferred",
-					"doctype": "Material Request"
-				},
-				{
-					"type": "report",
-					"is_query_report": True,
-					"name": "Batch-Wise Balance History",
-					"doctype": "Batch"
-				},
-				{
-					"type": "report",
-					"is_query_report": True,
-					"name": "Item Prices",
-					"doctype": "Price List"
 				},
 				{
 					"type": "report",
