@@ -6,7 +6,7 @@ import frappe
 
 def execute(filters=None):
 	#S/N	Date	Doc id	Request Type	Subject	Raised By	Status	Assigned to
-	columns, data = ["Date:Datetime:200","Doc id:Link/Helpdesk Ticket:200","Request Type:Link/Request Type:150","Subject:Data:200","Raised By:Link/Employee:150","Status:Data:150","Assigned to:Link/User:200"], []
+	columns, data = ["Date:Datetime:200","Doc id:Link/Helpdesk Ticket:200","Request Type:Link/Request Type:150","Subject:Data:200","Raised By:Link/Employee:150","Status:Data:150","Assigned to:Link/Employee:200"], []
 	request=""
 	status=""
 	raised=""
