@@ -11,7 +11,7 @@ def execute(filters=None):
 	if filters.get("vendor"):
 		status = """ and vendor = "{}" """.format(filters.get("vendor"))
 	data = frappe.db.sql("""select job_card_date,name,vendor,job_completion_date,job_completion_verified_by
-		from `tabJob Card` where (posting_date between "{}" and "{}") {}
+		from `tabJob Card` where (job_card_date between "{}" and "{}") {}
 	 """.format(filters.get("from"),filters.get("to"),vendor),as_list=1)
 
 	return columns, data
