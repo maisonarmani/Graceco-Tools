@@ -545,6 +545,12 @@ def get_data():
 				{
 					"type": "report",
 					"is_query_report": True,
+					"name": "Raw material re-order Report",
+					"doctype": "Item",
+				},
+				{
+					"type": "report",
+					"is_query_report": True,
 					"name": "Stock Balance",
 					"doctype": "Stock Ledger Entry"
 				},
@@ -605,6 +611,12 @@ def get_data():
 					"type": "report",
 					"name": "Minutes to First Response for Issues",
 					"doctype": "Issue",
+					"is_query_report": True
+				},
+				{
+					"type": "report",
+					"name": "HelpDesk Report",
+					"doctype": "Helpdesk Ticket",
 					"is_query_report": True
 				},
 			]
