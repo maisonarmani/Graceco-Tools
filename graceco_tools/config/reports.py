@@ -619,6 +619,24 @@ def get_data():
 					"doctype": "Helpdesk Ticket",
 					"is_query_report": True
 				},
+				{
+					"type": "report",
+					"name": "Job Card Status Report",
+					"doctype": "Job Card",
+					"is_query_report": True
+				},
+				{
+					"type": "report",
+					"name": "Job Card Cost Report",
+					"doctype": "Job Card",
+					"is_query_report": True
+				},
+				{
+					"type": "report",
+					"name": "Job Card Completion Report",
+					"doctype": "Job Card",
+					"is_query_report": True
+				},
 			]
 		}
 	]
