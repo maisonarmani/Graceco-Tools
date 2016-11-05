@@ -18,5 +18,5 @@ def execute(filters=None):
 		item = """ and raised_by = '{}' """.format(filters.get("raised"))
 	data=frappe.db.sql("""select addtime(opening_date,opening_time) as "date",name,request_type,subject,raised_by,status,assigned_to
 	from `tabHelpdesk Ticket`
-	where (posting_date between "{}" and "{}") {} {} {} """.format(filters.get("from"),filters.get("to"),request,status,raised),as_list=1)
+	where (opening_date between "{}" and "{}") {} {} {} """.format(filters.get("from"),filters.get("to"),request,status,raised),as_list=1)
 	return columns, data
