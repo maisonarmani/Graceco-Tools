@@ -29,10 +29,10 @@
 					<td>{%= dateutil.str_to_user(row["Date"]) %}</td>
 					<td >{%= row["Type"] %}</td>
 					<td >{%= row["Voucher No"] %}</td>
-					<td >{%= row["Opening"] %}</td>
-					<td >{%= row["Receipt"] %}</td>
-					<td >{%= row["Payment"] %}</td>
-					<td>{%= row["Balance"] %}</td>
+					<td >{%= format_currency(row["Opening"]) %}</td>
+					<td >{%= format_currency(row["Receipt"]) %}</td>
+					<td >{%= format_currency(row["Payment"]) %}</td>
+					<td>{%= format_currency(row["Balance"]) %}</td>
 					<td></td>
 			</tr>
 		{% } %}

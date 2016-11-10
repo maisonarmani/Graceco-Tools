@@ -1,9 +1,8 @@
 // Copyright (c) 2016, bobzz.zone@gmail.com and contributors
 // For license information, please see license.txt
-
+cur_frm.add_fetch("by","employee_name","employee_name");
 frappe.ui.form.on('Petty Cash Log', {
 	refresh: function(frm) {
-
 	},
     validate:function(frm) {
         if (frm.doc.transaction_type == "Receipt") {
