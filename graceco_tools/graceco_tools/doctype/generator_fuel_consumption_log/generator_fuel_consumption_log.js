@@ -14,5 +14,6 @@ frappe.ui.form.on('Generator Fuel Consumption Log', {
 			};
 		});
 		
-	}
+	},
+	
 });
