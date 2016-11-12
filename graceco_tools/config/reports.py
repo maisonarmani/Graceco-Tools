@@ -658,7 +658,7 @@ def get_data():
 				{
 					"type": "report",
 					"name": "Fixed Asset Inspection Checklist Report",
-					"doctype": " Fixed Asset Inspection Checklist",
+					"doctype": "Fixed Asset Inspection Checklist",
 					"is_query_report": True
 				},
 				{
@@ -670,7 +670,7 @@ def get_data():
 				{
 					"type": "report",
 					"name": "Daily Generator Activity Log Report",
-					"doctype": "Daily Generator Activity Log Report",
+					"doctype": "Daily Generator Activity Log",
 					"is_query_report": True
 				},
 			]
