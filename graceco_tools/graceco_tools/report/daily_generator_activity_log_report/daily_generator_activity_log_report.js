@@ -22,9 +22,9 @@ frappe.query_reports["Daily Generator Activity Log Report"] = {
 			"label": __("Asset"),
 			"fieldtype": "Link",
 			"options": "Asset",
-			"filters": [{
-					["Asset","asset_category","=","Plant and Machinery"] 
-				}]
+			"filters": {
+					"asset_category":"Plant and Machinery"
+				}
 		},
 	]
 }
