@@ -201,6 +201,18 @@ def get_data():
 					"name": "Customer Credit Balance",
 					"doctype": "Customer"
 				},
+				{
+					"type": "report",
+					"is_query_report": True,
+					"name": "Payment Voucher Report",
+					"doctype": "Payment Voucher Form"
+				},
+				{
+					"type": "report",
+					"is_query_report": True,
+					"name": "Bank Balance Report",
+					"doctype": "Journal Entry"
+				},
 			]
 		},
 		{
@@ -635,6 +647,30 @@ def get_data():
 					"type": "report",
 					"name": "Job Card Completion Report",
 					"doctype": "Job Card",
+					"is_query_report": True
+				},
+				{
+					"type": "report",
+					"name": "Computing Asset Inspection Checklist Report",
+					"doctype": "Computing Asset Inspection Checklist",
+					"is_query_report": True
+				},
+				{
+					"type": "report",
+					"name": "Fixed Asset Inspection Checklist Report",
+					"doctype": " Fixed Asset Inspection Checklist",
+					"is_query_report": True
+				},
+				{
+					"type": "report",
+					"name": "Generator Fuel Consumption Log Report",
+					"doctype": "Generator Fuel Consumption Log",
+					"is_query_report": True
+				},
+				{
+					"type": "report",
+					"name": "Daily Generator Activity Log Report",
+					"doctype": "Daily Generator Activity Log Report",
 					"is_query_report": True
 				},
 			]
