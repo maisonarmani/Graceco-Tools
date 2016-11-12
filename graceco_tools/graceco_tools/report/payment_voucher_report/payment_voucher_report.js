@@ -34,9 +34,6 @@ frappe.query_reports["Payment Voucher Report"] = {
 			"label": __("Bank"),
 			"fieldtype": "Link",
 			"options": "Account",
-			"filters": [{
-					["Account","account_type","in","Bank,Cash"] 
-				}]
 		}
 	]
 }
