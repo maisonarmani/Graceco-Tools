@@ -28,11 +28,10 @@
 				var row = data[i]; %}
 					<td>{%= dateutil.str_to_user(row["Date"]) %}</td>
 					<td >{%= row["Type"] %}</td>
-					<td >{%= row["Voucher No"] %}</td>
+					<td >{%= row["Referece No"] %}</td>
 					<td >{%= format_currency(row["Opening"]) %}</td>
 					<td >{%= format_currency(row["Receipt"]) %}</td>
 					<td >{%= format_currency(row["Payment"]) %}</td>
-					<td>{%= format_currency(row["Balance"]) %}</td>
 					<td></td>
 			</tr>
 		{% } %}
