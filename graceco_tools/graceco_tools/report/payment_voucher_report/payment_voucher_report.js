@@ -34,6 +34,15 @@ frappe.query_reports["Payment Voucher Report"] = {
 			"label": __("Bank"),
 			"fieldtype": "Link",
 			"options": "Account",
+			"get_query": function() {
+				return {
+					"query": "erpnext.controllers.queries.get_account_list",
+					"filters": [
+						['Account', 'account_type', 'in', 'Bank, Cash'],
+						['Account', 'is_group', '=', 0],
+					]
+				}
+			}
 		}
 	]
 }
