@@ -6,10 +6,4 @@ frappe.ui.form.on('Fixed Asset Inspection Checklist', {
 
 	},
 });
-cur_frm.set_query("fixed_asset", function() {
-			return {
-				"filters": {
-					"docstatus":1
-				}
-			};
-		});
+
