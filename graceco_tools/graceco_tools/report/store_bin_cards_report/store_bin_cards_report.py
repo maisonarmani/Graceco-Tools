@@ -7,21 +7,21 @@ from frappe.utils import flt
 
 def execute(filters=None):
 	columns, data = ["Store Bin Card No:Link/Store Bin Card:200","Date:Date:200","Item:Link/Item:200","Item Name:Data:200","Opening Qty:float:200","Receipt Ref No:Data:200","Receipt Qty:Float:100","Issues Ref No:Data:200","Issues Qty:Float:100","Balance Qty:Float:200"], []
-	rqty=0
-	iqty=0
+	rqty={}
+	iqty={}
 	if filters.get("from") and filters.get("from")!="":
-		receipt_qty = frappe.db.sql("""select sum(ii.qty)
+		receipt_qty = frappe.db.sql("""select ii.item_code, sum(ii.qty)
 			from `tabStore Bin Card Item` ii 
 			join `tabStore Bin Card` pp on ii.parent=pp.name 
 			where pp.docstatus=1 and pp.date < "{0}" and ii.item_code = '{1}' group by ii.item_code """.format(filters.get("from"),filters.get("item")),as_list=1)
 		for row in receipt_qty:
-			rqty+=row[0]
-		issued_qty = frappe.db.sql("""select sum(ii.qty)
+			rqty[row[0]]=row[1]
+		issued_qty = frappe.db.sql("""select ii.item_code,sum(ii.qty)
 			from `tabStore Bin Card Issue Item` ii 
 			join `tabStore Bin Card` pp on ii.parent=pp.name 
 			where pp.docstatus=1 and pp.date < "{0}" and ii.item_code = '{1}' group by ii.item_code """.format(filters.get("from"),filters.get("item")),as_list=1)
 		for row in issued_qty:
-			iqty+=row[0]
+			iqty[row[0]]=row[1]
 	all_data = frappe.db.sql("""select pp.name , pp.date as "date" , ii.item_code,ii.item_name,ii.ref_no,ii.qty,"",""
 		from `tabStore Bin Card Item` ii 
 		join `tabStore Bin Card` pp on ii.parent=pp.name 
@@ -32,8 +32,16 @@ def execute(filters=None):
 		join `tabStore Bin Card` p on i.parent=p.name 
 		where p.docstatus=1 and (p.date between "{0}" and  "{1}")  and i.item_code = '{2}' 
 		order by date""".format(filters.get("from"),filters.get("to"),filters.get("item")),as_list=1)
-	balance = rqty-iqty
+	#balance = rqty-iqty
 	for row in all_data:
+		r,i,bb,balance=0,0,0,0
+		if rqty[row[2]]:
+			r=rqty[row[2]]
+			rqty[row[2]]+=flt(row[5])
+		if iqty[row[2]]:
+			i=rqty[row[2]]
+			iqty[row[2]]+=flt(row[7])
+		balance=i-r
 		bb=balance
 		balance = balance+ flt(row[5])-flt(row[7])
 		data.append([row[0],row[1],row[2],row[3],bb,row[4],row[5],row[6],row[7],balance])
