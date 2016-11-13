@@ -10,7 +10,7 @@ def execute(filters=None):
 	if filters.get("status"):
 		status=""" and d.status = "{}" """.format(filters.get("status"))
 	data = frappe.db.sql("""select d.employee,d.computing_asset_type,d.status,d.remark 
-		from `tabComputing Asset Item` d 
-		join `tabComputing Asset Checklist` p on d.parent=p.name 
+		from `tabComputing Asset Inspection Item` d 
+		join `tabComputing Asset Inspection Checklist` p on d.parent=p.name 
 		where p.docstatus=1 and (p.date between "{}" and "{}") {} """.format(filters.get("from"),filters.get("to"),status),as_list=1)
 	return columns, data
