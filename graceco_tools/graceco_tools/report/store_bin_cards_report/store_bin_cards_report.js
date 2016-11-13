@@ -22,8 +22,7 @@ frappe.query_reports["Store Bin Cards Report"] = {
 			"fieldname":"item",
 			"label": __("Item"),
 			"fieldtype": "Link",
-			"options": "Item",
-			"reqd":1
+			"options": "Item"
 		}
 	]
 }
