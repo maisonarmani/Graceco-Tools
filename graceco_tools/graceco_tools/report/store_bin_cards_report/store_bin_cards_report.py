@@ -6,7 +6,7 @@ import frappe
 from frappe.utils import flt
 
 def execute(filters=None):
-	columns, data = ["Store Bin Card No:Link/Store Bin Card:200","Date:Date:200","Item:Link/Item:200","Item Name:Data:200","Opening Qty:float:200","Receipt Ref No:Data:200","Receipt Qty:Float:100","Issues Ref No:Data:200","Issues Qty:Float:100","Balance Qty:Float:200"], []
+	columns, data = ["Store Bin Card No:Link/Store Bin Card:200","Date:Date:200","Item:Link/Item:200","Item Name:Data:200","Opening Qty:Float:200","Receipt Ref No:Data:200","Receipt Qty:Float:100","Issues Ref No:Data:200","Issues Qty:Float:100","Balance Qty:Float:200"], []
 	rqty={}
 	iqty={}
 	item=""
