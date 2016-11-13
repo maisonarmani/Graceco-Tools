@@ -41,12 +41,12 @@ def execute(filters=None):
 	
 	for row in all_data:
 		r,i,bb,balance=0,0,0,0
-		if rqty[row[2]]:
+		if row[2] in rqty:
 			r=flt(rqty[row[2]])
 			rqty[row[2]]=flt(rqty[row[2]])+flt(row[5])
 		else:
 			rqty[row[2]]=flt(row[5])
-		if iqty[row[2]]:
+		if row[2] in iqty:
 			i=flt(iqty[row[2]])
 			iqty[row[2]]=flt(iqty[row[2]])+flt(row[7])
 		else:
