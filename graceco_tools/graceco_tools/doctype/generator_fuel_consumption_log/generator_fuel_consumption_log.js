@@ -9,7 +9,8 @@ frappe.ui.form.on('Generator Fuel Consumption Log', {
 		cur_frm.set_query("generator", function() {
 			return {
 				"filters": {
-					"asset_category":"Plant and Machinery"
+					"asset_category":"Plant and Machinery",
+					"docstatus":1
 				}
 			};
 		});
