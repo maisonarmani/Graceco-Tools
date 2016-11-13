@@ -37,12 +37,12 @@ def execute(filters=None):
 		r,i,bb,balance=0,0,0,0
 		if rqty[row[2]]:
 			r=rqty[row[2]]
-			rqty[row[2]]+=flt(row[5])
+			rqty[row[2]]=flt(rqty[row[2]])+flt(row[5])
 		else:
 			rqty[row[2]]=flt(row[5])
 		if iqty[row[2]]:
 			i=rqty[row[2]]
-			iqty[row[2]]+=flt(row[7])
+			iqty[row[2]]=flt(iqty[row[2]])+flt(row[7])
 		else:
 			iqty[row[2]]=flt(row[7])
 		balance=i-r
