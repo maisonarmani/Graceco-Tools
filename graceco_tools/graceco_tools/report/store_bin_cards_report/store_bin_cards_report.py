@@ -33,9 +33,10 @@ def execute(filters=None):
 		where p.docstatus=1 and (p.date between "{0}" and  "{1}")  and i.item_code = '{2}' 
 		order by date""".format(filters.get("from"),filters.get("to"),filters.get("item")),as_list=1)
 	#balance = rqty-iqty
-	#frappe.throw("{}".format(rqty))
+	
 	for row in all_data:
 		r,i,bb,balance=0,0,0,0
+		frappe.throw("{}".format(rqty))
 		if rqty[row[2]]:
 			r=flt(rqty[row[2]])
 			rqty[row[2]]=flt(rqty[row[2]])+flt(row[5])
