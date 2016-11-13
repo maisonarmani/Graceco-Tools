@@ -45,7 +45,7 @@ def execute(filters=None):
 			iqty[row[2]]=flt(iqty[row[2]])+flt(row[7])
 		else:
 			iqty[row[2]]=flt(row[7])
-		balance=i-r
+		balance=r-i
 		bb=balance
 		balance = balance+ flt(row[5])-flt(row[7])
 		data.append([row[0],row[1],row[2],row[3],bb,row[4],row[5],row[6],row[7],balance])
