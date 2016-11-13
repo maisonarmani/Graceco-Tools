@@ -14,7 +14,7 @@ def execute(filters=None):
 		status=""" and p.fixed_asset_class = "{}" """.format(filters.get("category"))
 	if filters.get("asset"):
 		status=""" and d.fixed_asset = "{}" """.format(filters.get("asset"))
-	data = frappe.db.sql("""select p.fixed_asset_class,d.fixed_asset,d.status,d.Remarks 
+	data = frappe.db.sql("""select p.fixed_asset_class,d.fixed_asset,d.status,d.remark
 		from `tabFixed Asset Inspection Item` d 
 		join `tabFixed Asset Inspection Checklist` p on d.parent = p.name
 		where p.docstatus=1 and (p.date between "{}" and "{}") {} {} {}
