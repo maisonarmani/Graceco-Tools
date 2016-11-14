@@ -3,9 +3,6 @@
 
 frappe.ui.form.on('Payment Voucher Form', {
 	refresh: function(frm) {
-
-	},
-	setup:function(frm) {
 		cur_frm.set_query("bank_account", function() {
 			return {
 				"filters": {
@@ -23,6 +20,5 @@ frappe.ui.form.on('Payment Voucher Form', {
 				}
 			};
 		});
-
 	}
 });
