@@ -3,7 +3,7 @@
 
 frappe.ui.form.on('Payment Voucher Form', {
 	refresh: function(frm) {
-		cur_frm.set_query("bank_account", function() {
+		cur_frm.set_query("bank_name", function() {
 			return {
 				"filters": [
 					["Account","account_type","in","Bank,Cash"],
