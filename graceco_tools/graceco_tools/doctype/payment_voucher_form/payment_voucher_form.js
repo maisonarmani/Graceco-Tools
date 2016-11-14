@@ -5,19 +5,19 @@ frappe.ui.form.on('Payment Voucher Form', {
 	refresh: function(frm) {
 		cur_frm.set_query("bank_account", function() {
 			return {
-				"filters": {
+				"filters": [
 					["Account","account_type","in","Bank,Cash"],
 					["Account", "is_group","in","0"]
-				}
+				]
 			};
 		});
 		cur_frm.set_query("expense_account", function() {
 			return {
-				"filters": {
+				"filters": [
 					["Account","lft",">=","362"],
 					//["Account","rgt","<=","561"],
 					["Account", "is_group","in","0"]
-				}
+				]
 			};
 		});
 	}
