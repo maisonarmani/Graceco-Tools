@@ -15,7 +15,7 @@ def execute(filters=None):
 	if filters.get("bank"):
 		bank=""" and bank_name = "{}" """.format(filters.get("bank"))
 	
-	data=frappe.db.sql("""select date,name,supplier,ref_doc,mode_of_payment,bank_name,ref_no
+	data=frappe.db.sql("""select date,name,supplier,ref_doc,amount,mode_of_payment,bank_name,ref_no
 	from `tabPayment Voucher Form` where docstatus=1 and (date between '{}' and '{}') {} {} {} 
-	"""..format(filters.get("from"),filters.get("to"),supplier,mop,bank),as_list=1)
+	""".format(filters.get("from"),filters.get("to"),supplier,mop,bank),as_list=1)
 	return columns, data
