@@ -151,7 +151,7 @@
    "label": "Amended From", 
    "length": 0, 
    "no_copy": 1, 
-   "options": "Daily Generator Start-Stop Log", 
+   "options": "Daily Generator Start Stop Log", 
    "permlevel": 0, 
    "print_hide": 1, 
    "print_hide_if_no_value": 0, 
@@ -176,7 +176,7 @@
  "modified": "2016-11-11 14:31:04.695986", 
  "modified_by": "Administrator", 
  "module": "Graceco Tools", 
- "name": "Daily Generator Start-Stop Log", 
+ "name": "Daily Generator Start Stop Log", 
  "name_case": "", 
  "owner": "Administrator", 
  "permissions": [
