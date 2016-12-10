@@ -17,5 +17,12 @@ def get_data():
 			"icon": "octicon octicon-file-checklist",
 			"type": "module",
 			"label": _("Reports")
-		}
+		},
+		{
+			"module_name": "Logistics",
+			"color": "#FF0084",
+			"icon": "icon-checklist",
+			"icon": "octicon octicon-checklist",
+			"type": "module"
+		},
 	]
