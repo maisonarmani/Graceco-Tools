@@ -18,3 +18,14 @@ frappe.ui.form.on('Generator Fuel Consumption Log', {
 	},
 	
 });
+
+cur_frm.cscript.fuel_qty = function(doc,dt,dn) {
+   var d=locals[dt][dn];
+d.total = d.fuel_qty * d.unit_price;
+refresh_field("total",d.name,d.parentfield);
+}
+cur_frm.cscript.unit_price = function(doc,dt,dn) {
+   var d=locals[dt][dn];
+d.total = d.fuel_qty * d.unit_price;
+refresh_field("total",d.name,d.parentfield);
+}

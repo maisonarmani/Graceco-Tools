@@ -1,0 +1,75 @@
+{%= frappe.boot.letter_heads["Standard Letterhead"] %}
+{%
+	if (report.columns.length > 10) {
+		frappe.throw(__("Too many columns. Export the report and print it using a spreadsheet application."));
+	}
+%}
+
+<style>
+</style>
+
+<h1>{%= __(report.report_name) %}</h1>
+{% if (filters.from_date) { %}
+<p><b>From Date:</b> {%= filters.from_date %}</p>
+{% } %}
+{% if (filters.to_date) { %}
+<p><b>To Date:</b> {%= filters.to_date %}</p>
+{% } %}
+{% if (filters.vehicle) { %}
+<p><b>Vehicle:</b> {%= filters.vehicle %}</p>
+{% } %}
+{% if (filters.driver) { %}
+<p><b>Driver:</b> {%= filters.driver %}</p>
+{% } %}
+{% if (filters.fuel_type) { %}
+<p><b>Fuel Type:</b> {%= filters.fuel_type %}</p>
+{% } %}
+<hr>
+<table class="table">
+	<thead>
+		<tr>
+			{% 
+			var total_liters = 0;
+			var total_amount = 0;
+			var total_miles = 0;
+			for(var i=1, l=report.columns.length; i<l; i++) { %}
+				<th class="text-left">{%= report.columns[i].label %}</th>
+			{% } %}
+		</tr>
+	</thead>
+	<tbody>
+		{% for(var j=0, k=data.length; j<k; j++) { %}
+			{%
+				var row = data[j];
+				var row_class = data[j].parent_account ? "" : "financial-statements-important";
+				row_class += data[j].account_name ? "" : " financial-statements-blank-row";
+			%}
+			<tr class="{%= row_class %}">
+				{% for(var i=1, l=report.columns.length; i<l; i++) { %}
+					<td class="text-left">
+						{% var fieldname = report.columns[i].field; %}
+							{% if ( i == 7 ) { %}
+								{%= format_currency(row[fieldname], row.currency) %}
+							{% } else { %}
+                                                                {%= row[fieldname] %}
+							{% } %}
+					</td>
+				{% } %}
+			</tr>
+		{% 
+			total_liters = total_liters + parseFloat(row['Liters']);
+			total_amount = total_amount + parseFloat(row['Amount']);
+			total_miles = total_miles + parseFloat(row['Total Miles']);
+		} 
+		%}
+
+			<tr>
+				<th>Total</th>
+				<th colspan="4">&nbsp;</th>
+				<th>{%= total_liters %}</th>
+                                <th>{%= format_currency(total_amount) %}</th>
+                                <th>{%= total_miles %}</th>
+			</tr>
+	</tbody>
+</table>
+<p class="text-right text-muted">Printed On {%= dateutil.str_to_user(dateutil.get_datetime_as_string()) %}</p>
