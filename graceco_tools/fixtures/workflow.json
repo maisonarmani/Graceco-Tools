@@ -1,0 +1,338 @@
+[
+ {
+  "docstatus": 0, 
+  "doctype": "Workflow", 
+  "document_type": "Purchase Order", 
+  "is_active": 1, 
+  "modified": "2016-11-15 09:33:13.077361", 
+  "name": "Purchase Order Approval", 
+  "states": [
+   {
+    "allow_edit": "Purchase User", 
+    "doc_status": "0", 
+    "message": null, 
+    "state": "Draft", 
+    "update_field": null, 
+    "update_value": null
+   }, 
+   {
+    "allow_edit": "Directors", 
+    "doc_status": "1", 
+    "message": null, 
+    "state": "Approved", 
+    "update_field": null, 
+    "update_value": null
+   }, 
+   {
+    "allow_edit": "Directors", 
+    "doc_status": "1", 
+    "message": null, 
+    "state": "Rejected", 
+    "update_field": null, 
+    "update_value": null
+   }, 
+   {
+    "allow_edit": "Purchase User", 
+    "doc_status": "2", 
+    "message": null, 
+    "state": "Cancelled", 
+    "update_field": null, 
+    "update_value": null
+   }
+  ], 
+  "transitions": [
+   {
+    "action": "Approve", 
+    "allowed": "Directors", 
+    "next_state": "Approved", 
+    "state": "Draft"
+   }, 
+   {
+    "action": "Reject", 
+    "allowed": "Directors", 
+    "next_state": "Draft", 
+    "state": "Draft"
+   }
+  ], 
+  "workflow_name": "Purchase Order Approval", 
+  "workflow_state_field": "workflow_state"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Workflow", 
+  "document_type": "Sales Order", 
+  "is_active": 1, 
+  "modified": "2016-10-09 18:56:36.156216", 
+  "name": "Sales Order Approval", 
+  "states": [
+   {
+    "allow_edit": "Sales User", 
+    "doc_status": "0", 
+    "message": null, 
+    "state": "Draft", 
+    "update_field": null, 
+    "update_value": null
+   }, 
+   {
+    "allow_edit": "Sales Master Manager", 
+    "doc_status": "1", 
+    "message": null, 
+    "state": "Approved", 
+    "update_field": null, 
+    "update_value": null
+   }, 
+   {
+    "allow_edit": "Sales Master Manager", 
+    "doc_status": "1", 
+    "message": null, 
+    "state": "Rejected", 
+    "update_field": null, 
+    "update_value": null
+   }
+  ], 
+  "transitions": [
+   {
+    "action": "Approve", 
+    "allowed": "Sales Master Manager", 
+    "next_state": "Approved", 
+    "state": "Draft"
+   }, 
+   {
+    "action": "Reject", 
+    "allowed": "Sales Master Manager", 
+    "next_state": "Draft", 
+    "state": "Draft"
+   }
+  ], 
+  "workflow_name": "Sales Order Approval", 
+  "workflow_state_field": "workflow_state"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Workflow", 
+  "document_type": "Purchase Order", 
+  "is_active": 0, 
+  "modified": "2016-07-26 13:52:15.872069", 
+  "name": "Purchase Order Approval1", 
+  "states": [
+   {
+    "allow_edit": "Purchase User", 
+    "doc_status": "0", 
+    "message": null, 
+    "state": "Draft", 
+    "update_field": null, 
+    "update_value": null
+   }, 
+   {
+    "allow_edit": "Purchase User", 
+    "doc_status": "1", 
+    "message": null, 
+    "state": "Pending", 
+    "update_field": null, 
+    "update_value": null
+   }, 
+   {
+    "allow_edit": "Expense Approver", 
+    "doc_status": "1", 
+    "message": null, 
+    "state": "Approved", 
+    "update_field": null, 
+    "update_value": null
+   }, 
+   {
+    "allow_edit": "Expense Approver", 
+    "doc_status": "2", 
+    "message": null, 
+    "state": "Rejected", 
+    "update_field": null, 
+    "update_value": null
+   }
+  ], 
+  "transitions": [
+   {
+    "action": "Apply", 
+    "allowed": "Purchase User", 
+    "next_state": "Pending", 
+    "state": "Draft"
+   }, 
+   {
+    "action": "Approve", 
+    "allowed": "Expense Approver", 
+    "next_state": "Approved", 
+    "state": "Pending"
+   }, 
+   {
+    "action": "Reject", 
+    "allowed": "Expense Approver", 
+    "next_state": "Rejected", 
+    "state": "Pending"
+   }
+  ], 
+  "workflow_name": "Purchase Order Approval1", 
+  "workflow_state_field": "workflow_state"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Workflow", 
+  "document_type": "Material Request", 
+  "is_active": 0, 
+  "modified": "2016-07-27 18:10:02.263452", 
+  "name": "Material Request Process", 
+  "states": [
+   {
+    "allow_edit": "Material User", 
+    "doc_status": "0", 
+    "message": null, 
+    "state": "Draft", 
+    "update_field": null, 
+    "update_value": null
+   }, 
+   {
+    "allow_edit": "Material Master Manager", 
+    "doc_status": "1", 
+    "message": null, 
+    "state": "Approved", 
+    "update_field": null, 
+    "update_value": null
+   }, 
+   {
+    "allow_edit": "Material Master Manager", 
+    "doc_status": "1", 
+    "message": null, 
+    "state": "Rejected", 
+    "update_field": null, 
+    "update_value": null
+   }
+  ], 
+  "transitions": [
+   {
+    "action": "Approve", 
+    "allowed": "Material Master Manager", 
+    "next_state": "Approved", 
+    "state": "Draft"
+   }, 
+   {
+    "action": "Reject", 
+    "allowed": "Material Master Manager", 
+    "next_state": "Draft", 
+    "state": "Draft"
+   }
+  ], 
+  "workflow_name": "Material Request Process", 
+  "workflow_state_field": "workflow_state"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Workflow", 
+  "document_type": "Payment Voucher Form", 
+  "is_active": 0, 
+  "modified": "2016-11-15 13:46:03.663508", 
+  "name": "Payment Voucher Approval", 
+  "states": [
+   {
+    "allow_edit": "Accounts Manager", 
+    "doc_status": "0", 
+    "message": null, 
+    "state": "Draft", 
+    "update_field": null, 
+    "update_value": null
+   }, 
+   {
+    "allow_edit": "Directors", 
+    "doc_status": "1", 
+    "message": null, 
+    "state": "Authorised", 
+    "update_field": null, 
+    "update_value": null
+   }, 
+   {
+    "allow_edit": "Directors", 
+    "doc_status": "1", 
+    "message": null, 
+    "state": "Rejected", 
+    "update_field": null, 
+    "update_value": null
+   }
+  ], 
+  "transitions": [
+   {
+    "action": "Approve", 
+    "allowed": "Directors", 
+    "next_state": "Authorised", 
+    "state": "Draft"
+   }, 
+   {
+    "action": "Reject", 
+    "allowed": "Directors", 
+    "next_state": "Draft", 
+    "state": "Draft"
+   }
+  ], 
+  "workflow_name": "Payment Voucher Approval", 
+  "workflow_state_field": "workflow_state"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Workflow", 
+  "document_type": "Job Card", 
+  "is_active": 1, 
+  "modified": "2016-12-01 16:00:40.910169", 
+  "name": "Job Card WorkFlow", 
+  "states": [
+   {
+    "allow_edit": "Job Card User", 
+    "doc_status": "0", 
+    "message": null, 
+    "state": "Draft", 
+    "update_field": "status", 
+    "update_value": "Draft"
+   }, 
+   {
+    "allow_edit": "Expense Approver", 
+    "doc_status": "0", 
+    "message": null, 
+    "state": "Approved", 
+    "update_field": "status", 
+    "update_value": "Approved"
+   }, 
+   {
+    "allow_edit": "Helpdesk Admin", 
+    "doc_status": "1", 
+    "message": null, 
+    "state": "Completed", 
+    "update_field": "status", 
+    "update_value": "Completed"
+   }, 
+   {
+    "allow_edit": "Helpdesk Admin", 
+    "doc_status": "2", 
+    "message": null, 
+    "state": "Cancelled", 
+    "update_field": "status", 
+    "update_value": "Cancelled"
+   }
+  ], 
+  "transitions": [
+   {
+    "action": "Approve", 
+    "allowed": "Expense Approver", 
+    "next_state": "Approved", 
+    "state": "Draft"
+   }, 
+   {
+    "action": "Complete", 
+    "allowed": "Helpdesk Admin", 
+    "next_state": "Completed", 
+    "state": "Approved"
+   }, 
+   {
+    "action": "Cancel", 
+    "allowed": "Helpdesk Admin", 
+    "next_state": "Cancelled", 
+    "state": "Completed"
+   }
+  ], 
+  "workflow_name": "Job Card WorkFlow", 
+  "workflow_state_field": "workflow_state"
+ }
+]
