@@ -8,5 +8,5 @@ import unittest
 
 # test_records = frappe.get_test_records('Daily Generator Start-Stop Log')
 
-class TestDailyGeneratorStart-StopLog(unittest.TestCase):
+class TestDailyGeneratorStartStopLog(unittest.TestCase):
 	pass
