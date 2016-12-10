@@ -6,5 +6,5 @@ from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
 
-class DailyGeneratorStart-StopLog(Document):
+class DailyGeneratorStartStopLog(Document):
 	pass
