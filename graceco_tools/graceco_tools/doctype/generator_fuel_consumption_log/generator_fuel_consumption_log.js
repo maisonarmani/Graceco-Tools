@@ -3,7 +3,7 @@
 
 frappe.ui.form.on('Generator Fuel Consumption Log', {
 	refresh: function(frm) {
-
+		cur_frm.add_fetch("generator","asset_name","generator_name");
 	},
 	setup: function(frm) {
 		cur_frm.set_query("generator", function() {
