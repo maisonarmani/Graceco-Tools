@@ -3,7 +3,7 @@
 
 frappe.ui.form.on('Daily Generator Activity Log', {
 	refresh: function(frm) {
-
+		cur_frm.add_fetch("carried_out_by","employee_name","employee_name");
 	}
 });
 cur_frm.cscript.stop= function(doc,dt,dn) {

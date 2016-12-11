@@ -13,5 +13,5 @@ def execute(filters=None):
 	data = frappe.db.sql("""select p.date,p.name,p.generator,d.fuel_qty,d.total
 	from `tabGenerator Fuel Consumption Log Item` d 
 	left join `tabGenerator Fuel Consumption Log` p on p.name=d.parent
-	where p.docstatus=1 and (p,date between "{}" and "{}") {} """.format(filters.get("from"),filters.get("to"),asset),as_list=1)
+	where p.docstatus=1 and (p.date between "{}" and "{}") {} """.format(filters.get("from"),filters.get("to"),asset),as_list=1)
 	return columns, data
