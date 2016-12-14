@@ -52,7 +52,7 @@
    "label": "Production Order Form No", 
    "length": 0, 
    "no_copy": 0, 
-   "options": "Weekly Production Order Form", 
+   "options": "Daily Production Order", 
    "permlevel": 0, 
    "precision": "", 
    "print_hide": 0, 
