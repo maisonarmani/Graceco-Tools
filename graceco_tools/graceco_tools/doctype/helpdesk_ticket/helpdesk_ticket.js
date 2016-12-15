@@ -51,7 +51,7 @@ frappe.ui.form.on('Helpdesk Ticket', {
 		var ticket = frappe.model.get_doc(cdt, cdn);
 		if (ticket.raised_by) {
 			frappe.call({
-				method: "erpnext.support.doctype.helpdesk_ticket.helpdesk_ticket.get_full_name",
+				method: "graceco_tools.graceco_tools.doctype.helpdesk_ticket.helpdesk_ticket.get_full_name",
 				args: {
 					raised_by: ticket.raised_by
 					},
