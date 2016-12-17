@@ -334,6 +334,12 @@ def get_data():
 					"name": "Monthly Attendance Sheet",
 					"doctype": "Attendance"
 				},
+				{
+					"type": "report",
+					"is_query_report": True,
+					"name": "Expense Claim Report",
+					"doctype": "Expense Claim"
+				},
 			]
 		},
 		{

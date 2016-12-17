@@ -6,7 +6,7 @@ import frappe
 
 def execute(filters=None):
 	if not filters: filters ={}
-	columns = ["Date:Date:100","Doc ID:Link/Expense Claim:150","Logistic Expense Type:Link/Expense Claim Type:100","Description:Text:200","Amount:Currency:150","Approver:Link/User:200"]
+	columns = ["Date:Date:100","Doc ID:Link/Logistics Expense:150","Logistic Expense Type:Link/Logistics Expense Type:100","Description:Text:200","Amount:Currency:150","Approver:Link/User:200"]
 	conditions = ""
 	if filters.get("from_date"):
 		conditions += " AND led.expense_date >= %(from_date)s"
