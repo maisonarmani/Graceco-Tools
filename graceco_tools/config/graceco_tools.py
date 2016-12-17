@@ -28,8 +28,13 @@ def get_data():
 				},
 				{
 					"type": "doctype",
-					"name": "Weekly Production Order Form",
-					"description": _("Weekly Production Order Form")
+					"name": "Weekly Production Plan",
+					"description": _("Weekly Production Plan")
+				},
+				{
+					"type": "doctype",
+					"name": "Daily Production Order",
+					"description": _("Daily Production Order")
 				}
 			]
 		},
