@@ -27,5 +27,5 @@ frappe.query_reports["Expense Claim Report"] = {
                         options: "Expense Claim Type",
                 },
 	]
-	]
+	
 }
