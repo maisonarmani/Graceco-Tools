@@ -3,7 +3,6 @@
 
 frappe.query_reports["Expense Claim Report"] = {
 	"filters": [
-		"filters": [
         {
                         fieldname: "from_date",
                         label: __("From Date"),
