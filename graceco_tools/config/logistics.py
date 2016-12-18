@@ -34,17 +34,17 @@ def get_data():
                                 },
 			]
 		},
-                {
-                        "label": _("Expense"),
-                        "icon": "icon-star",
-                        "items": [
-                                {
-                                        "type": "doctype",
-                                        "name": "Logistics Expense",
-                                        "description": _("Logistics Expense"),
-                                },
-                        ]
-                },
+                #{
+                #        "label": _("Expense"),
+                #        "icon": "icon-star",
+                #        "items": [
+                #                {
+                #                        "type": "doctype",
+                #                        "name": "Logistics Expense",
+                #                        "description": _("Logistics Expense"),
+                #                },
+                #        ]
+                #},
                 {
                         "label": _("Setup"),
                         "icon": "icon-star",
@@ -64,11 +64,11 @@ def get_data():
                                         "name": "Purpose",
                                         "description": _("Purpose"),
                                 },
-                                {
-                                        "type": "doctype",
-                                        "name": "Logistics Expense Type",
-                                        "description": _("Logistics Expense Type"),
-                                },
+                        #        {
+                        #                "type": "doctype",
+                        #                "name": "Logistics Expense Type",
+                        #                "description": _("Logistics Expense Type"),
+                        #        },
                         ]
                 },
 

@@ -375,12 +375,12 @@ def get_data():
 					"route": "query-report/Vehicle Mileage Report",
 					"doctype": "Daily Vehicle Mileage Log",
 				},
-				{
-					"type": "report",
-					"name": "Logistics Expense Report",
-					"route": "query-report/Logistics Expense Report",
-					"doctype": "Logistics Expense",
-				},
+				#{
+				#	"type": "report",
+				#	"name": "Logistics Expense Report",
+				#	"route": "query-report/Logistics Expense Report",
+				#	"doctype": "Logistics Expense",
+				#},
 			]
 		},
 		{
