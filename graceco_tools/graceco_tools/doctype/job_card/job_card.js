@@ -14,7 +14,7 @@ frappe.ui.form.on('Job Card', {
 		{
 			cur_frm.add_custom_button('Make Purchase Order', function () {
                 frappe.model.open_mapped_doc({
-                    method: "erpnext.support.doctype.job_card.job_card.make_purchase_order",
+                    method: "graceco_tools.graceco_tools.doctype.job_card.job_card.make_purchase_order",
                     frm: cur_frm
                 });
 /*                var po = frappe.model.make_new_doc_and_get_name('Purchase Order');
@@ -60,7 +60,7 @@ frappe.ui.form.on('Job Card', {
                 var job_card = frappe.model.get_doc(cdt, cdn);
                 if (job_card.ticket_number) {
                         frappe.call({
-                                method: "erpnext.support.doctype.job_card.job_card.get_requested_by",
+                                method: "graceco_tools.graceco_tools.doctype.job_card.job_card.get_requested_by",
                                 args: {
                                         ticket_number: job_card.ticket_number
                                         },
@@ -69,7 +69,7 @@ frappe.ui.form.on('Job Card', {
                                 frappe.model.set_value(cdt, cdn, "requested_by", r.message);}
                         });
 			frappe.call({
-                                method: "erpnext.support.doctype.job_card.job_card.get_employee_name",
+                                method: "graceco_tools.graceco_tools.doctype.job_card.job_card.get_employee_name",
                                 args: {
                                         ticket_number: job_card.ticket_number
                                         },
