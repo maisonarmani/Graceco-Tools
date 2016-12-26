@@ -17,7 +17,7 @@ frappe.query_reports["Expense Claim Report"] = {
                         fieldname: "approver",
                         label: __("Approver"),
                         fieldtype: "Link",
-                        options: "User",
+                        options: "User"
                 },
         {
                         fieldname: "expense_type",
@@ -28,3 +28,8 @@ frappe.query_reports["Expense Claim Report"] = {
 	]
 	
 }
+cur_frm.set_query("approver", function() {
+        return {
+            query: "erpnext.hr.doctype.expense_claim.expense_claim.get_expense_approver"
+        };
+    });
