@@ -10,6 +10,6 @@ def execute(filters=None):
 	where=""
 	if filters.get("asset_category"):
 		where = """ and asset_category = "{}" """.format(filters.get("asset_category"))
-	data = frappe.db.sql("""select item_code,asset_name,asset_category,warehouse,purchase_date,value_after_depreciation 
+	data = frappe.db.sql("""select item_code,name,asset_category,warehouse,purchase_date,value_after_depreciation 
 		from tabAsset where docstatus=1 {}""".format(where),as_list=1)
 	return columns, data
