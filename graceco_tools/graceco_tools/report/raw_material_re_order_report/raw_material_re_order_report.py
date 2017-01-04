@@ -18,7 +18,7 @@ def execute(filters=None):
 		join `tabItem` it on it.item_code=s.item_code
 		where s.qty_after_transaction < i.warehouse_reorder_level
 		""".format(filters.get("warehouse")), as_list=1)
-	items = frappe.db.sql("""select i.parent,"0",i.warehouse_reorder_level,i.warehouse_reorder_qty,it.lead_time_days 
+	items = frappe.db.sql("""select i.parent,it.item_name,"0",i.warehouse_reorder_level,i.warehouse_reorder_qty,it.lead_time_days 
 		from `tabItem Reorder` i 
 		join `tabItem` it on it.item_code=i.parent
 		where i.warehouse = "{0}" and i.parent NOT IN (select s.item_code from `tabStock Ledger Entry` s group by s.item_code)""".format(filters.get("warehouse")), as_list=1)
