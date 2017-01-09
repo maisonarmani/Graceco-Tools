@@ -16,9 +16,9 @@ class HelpdeskTicket(Document):
 			if not 'Helpdesk Admin' in frappe.get_roles():
 				frappe.throw('Only Helpdesk Admin can edit a ticket that has job cards')
 
-		if self.assigned_to:
-			if not 'Helpdesk Admin' in frappe.get_roles():
-				frappe.throw('Only Helpdesk Admin can assign tickets.')
+		#if self.assigned_to:
+		#	if not 'Helpdesk Admin' in frappe.get_roles():
+		#		frappe.throw('Only Helpdesk Admin can assign tickets.')
 
 		if not self.raised_by_name:
 			if self.raised_by:
