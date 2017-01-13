@@ -189,8 +189,8 @@
  "issingle": 0, 
  "istable": 0, 
  "max_attachments": 0, 
- "modified": "2017-01-03 17:54:14.198582", 
- "modified_by": "Administrator", 
+ "modified": "2017-01-08 17:39:22.060971", 
+ "modified_by": "tunde.kalejaiye@graceco.com.ng", 
  "module": "Graceco Tools", 
  "name": "Fixed Asset Inspection Checklist", 
  "name_case": "", 
@@ -199,9 +199,9 @@
   {
    "amend": 1, 
    "apply_user_permissions": 0, 
-   "cancel": 0, 
+   "cancel": 1, 
    "create": 1, 
-   "delete": 1, 
+   "delete": 0, 
    "email": 1, 
    "export": 1, 
    "if_owner": 0, 
@@ -220,7 +220,7 @@
   {
    "amend": 1, 
    "apply_user_permissions": 0, 
-   "cancel": 0, 
+   "cancel": 1, 
    "create": 1, 
    "delete": 1, 
    "email": 1, 
@@ -257,7 +257,7 @@
    "set_user_permissions": 0, 
    "share": 1, 
    "submit": 0, 
-   "write": 1
+   "write": 0
   }
  ], 
  "quick_entry": 0, 
