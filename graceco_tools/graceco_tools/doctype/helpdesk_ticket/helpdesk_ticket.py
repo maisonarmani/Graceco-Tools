@@ -30,8 +30,8 @@ class HelpdeskTicket(Document):
 		#if self.assigned_to and self.status != 'On-Hold' and self.status !='Close':
 		#	if not 'Helpdesk Admin' in frappe.get_roles():
 		#		frappe.throw('Only Helpdesk Admin can assign tickets.')
-			else:
-				self.status = 'Assigned'
+		#	else:
+		#		self.status = 'Assigned'
 
 		if self.status == 'On-Hold':
 			if not 'Helpdesk Admin' in frappe.get_roles():
