@@ -25,4 +25,11 @@ def get_data():
 			"icon": "octicon octicon-checklist",
 			"type": "module"
 		},
+		{
+			"module_name": "Safety and Compliance",
+			"color": "#FF0089",
+			"icon": "icon-checklist",
+			"icon": "octicon octicon-checklist",
+			"type": "module"
+		},
 	]
