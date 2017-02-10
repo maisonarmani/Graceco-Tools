@@ -1,7 +1,5 @@
 ## Graceco Tools
-
-by bobby
+By Maison Armani
 
 #### License
-
 MIT
