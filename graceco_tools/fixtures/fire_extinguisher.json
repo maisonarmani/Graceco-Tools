@@ -1,0 +1,24 @@
+[
+ {
+  "_liked_by": "[\"Administrator\"]", 
+  "class": "A", 
+  "docstatus": 0, 
+  "doctype": "Fire Extinguisher", 
+  "location": "Factory-Production", 
+  "modified": "2017-02-22 13:04:40.050647", 
+  "name": "FIRE-EXTINGUISHER-0001", 
+  "reference_number": "58", 
+  "status": "Empty"
+ }, 
+ {
+  "_liked_by": "[]", 
+  "class": "BC", 
+  "docstatus": 0, 
+  "doctype": "Fire Extinguisher", 
+  "location": "Production", 
+  "modified": "2017-02-22 13:04:40.174704", 
+  "name": "FIRE-EXTINGUISHER-0002", 
+  "reference_number": "GCL-FE-53", 
+  "status": "Empty"
+ }
+]

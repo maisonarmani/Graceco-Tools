@@ -11,14 +11,6 @@ var take = function(obj,param){
 	}
 };
 
-frappe.form.link_formatters['Employee'] = function(value, doc) {
-	if(doc.employee_name && doc.employee_name !== value) {
-        return value + ': ' + doc.employee_name;
-    } else {
-        return value;
-    }
-}
-
 frappe.ui.form.on("Accident",{
 	employee:function(frm,cdt,cdn){
 		frappe.call({
@@ -30,7 +22,7 @@ frappe.ui.form.on("Accident",{
 				var message = ret.message || {};
 				if(message.external /**&& !frm.doc.external_work_experience.length**/){
 					// for external
-					frm.doc.external_work_experience = []
+					frm.doc.external_work_experience = [];
 					message.external.forEach(function(val){
 						var d = frappe.model.add_child(cur_frm.doc, "Victim External Work History", "external_work_experience");
 						take.apply(d,[val,[
@@ -58,9 +50,12 @@ frappe.ui.form.on("Accident",{
 	refresh: function(frm) {},
 	onload:function(frm,cdt,cdn){
 		// set prepared by and prepared date
-		if(frm.doc.prepared_by == "" || frm.doc.prepared_by == undefined) frappe.model.set_value(cdt,cdn,'prepared_by',
-			[frappe.boot.user.first_name,frappe.boot.user.last_name].join(" "));
-		if(frm.doc.prepared_date == "" || frm.doc.prepared_date == undefined) frappe.model.set_value(cdt,cdn,'prepared_date',frappe.datetime.now_datetime().split(" ")[0]);
+		if(frm.doc.prepared_by == "" || frm.doc.prepared_by == undefined){
+			frappe.model.set_value(cdt,cdn,'prepared_by',user_fullname);
+		}
+		if(frm.doc.prepared_date == "" || frm.doc.prepared_date == undefined){
+			frappe.model.set_value(cdt,cdn,'prepared_date',frappe.datetime.now_datetime());
+		}
 	}
 
 });

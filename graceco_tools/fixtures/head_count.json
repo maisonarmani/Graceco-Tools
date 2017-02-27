@@ -1,0 +1,78 @@
+[
+ {
+  "amended_from": null, 
+  "current_count_date": "2017-03-02", 
+  "docstatus": 1, 
+  "doctype": "Head Count", 
+  "employee_id": "GCL-EMP/0089", 
+  "head_count_details": [
+   {
+    "count": 22, 
+    "department": "Production - Factory", 
+    "duty": "Day/Morning"
+   }, 
+   {
+    "count": 22, 
+    "department": "Sales & Marketing", 
+    "duty": "Day"
+   }, 
+   {
+    "count": 10, 
+    "department": "Production-Bakery", 
+    "duty": "Day"
+   }, 
+   {
+    "count": 10, 
+    "department": "Facility", 
+    "duty": "Day"
+   }, 
+   {
+    "count": 12, 
+    "department": "Chinchin", 
+    "duty": "Day/Afternoon"
+   }, 
+   {
+    "count": 12, 
+    "department": "Waste Control", 
+    "duty": "Day/Afternoon"
+   }, 
+   {
+    "count": 12, 
+    "department": "Accounts & Finance", 
+    "duty": "Day"
+   }, 
+   {
+    "count": 1, 
+    "department": "Production Graceco Foods", 
+    "duty": "Day"
+   }
+  ], 
+  "modified": "2017-02-14 10:24:33.309504", 
+  "name": "GCL-SC-HC-0001", 
+  "staff_full_name": "Ogoh Ekene Jacob", 
+  "total_count": 101
+ }, 
+ {
+  "amended_from": null, 
+  "current_count_date": "2017-02-14", 
+  "docstatus": 0, 
+  "doctype": "Head Count", 
+  "employee_id": "GCL-EMP/0854", 
+  "head_count_details": [
+   {
+    "count": 22, 
+    "department": "Production", 
+    "duty": "Day"
+   }, 
+   {
+    "count": 22, 
+    "department": "Maintenance", 
+    "duty": "Day"
+   }
+  ], 
+  "modified": "2017-02-14 13:18:38.221696", 
+  "name": "GCL-SC-HC-0002", 
+  "staff_full_name": "Olufemi Emmanuel Olatoye", 
+  "total_count": 44
+ }
+]

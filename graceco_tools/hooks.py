@@ -4,19 +4,19 @@ from . import __version__ as app_version
 
 app_name = "graceco_tools"
 app_title = "Graceco Tools"
-app_publisher = "bobzz.zone@gmail.com"
-app_description = "by bobby"
+app_publisher = "Maison Armani"
+app_description = "Graceco tools for maintanance"
 app_icon = "octicon octicon-file-directory"
 app_color = "grey"
-app_email = "bobzz.zone@gmail.com"
+app_email = "masonarmani38@gmail.com"
 app_license = "MIT"
 
 # Includes in <head>
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/graceco_tools/css/graceco_tools.css"
-# app_include_js = "/assets/graceco_tools/js/graceco_tools.js"
+app_include_css = "/assets/graceco_tools/css/graceco_tools.min.css"
+app_include_js = "/assets/graceco_tools/js/graceco_tools.min.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/graceco_tools/css/graceco_tools.css"
@@ -27,7 +27,7 @@ app_license = "MIT"
 
 # application home page (will override Website Settings)
 # home_page = "login"
-fixtures = ['Custom Field','Print Format','Workflow','Workflow State','Workflow Action','Role']
+fixtures = ['Custom Field','Print Format','Workflow','Workflow State','Workflow Action','Role','Fire Extinguisher','Request Type']
 # website user home page (by Role)
 # role_home_page = {
 #	"Role": "home_page"

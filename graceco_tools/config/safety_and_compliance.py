@@ -23,13 +23,13 @@ def get_data():
 				},
 				{
 					"type": "doctype",
-					"name": "Safety Loan",
-					"description": _("Safety Loan")
+					"name": "Head Count",
+					"description": _("Head Count")
 				},
 				{
 					"type": "doctype",
-					"name": "Safety Checklist",
-					"description": _("Safety Checklist")
+					"name": "Safety Loan",
+					"description": _("Safety Loan")
 				},
 			]
 		},
@@ -56,6 +56,11 @@ def get_data():
 					"name": "Safety Inspection Checklist",
 					"description": _("Safety Inspection Checklist")
 				},
+				{
+					"type": "doctype",
+					"name": "Safety Checklist",
+					"description": _("Safety Checklist")
+				},
 			]
 		},
 		{
@@ -67,6 +72,25 @@ def get_data():
 					"name": "Fire Accident Report",
 					"doctype":'Accident',
 					"description": _("Fire Accident Report")
+				},
+			]
+		},
+		{
+			"label": _("Other Reports"),
+			"items": [
+				{
+					"type": "report",
+					"is_query_report": False,
+					"name": "Accident Report",
+					"doctype":'Accident',
+					"description": _("Accident Report")
+				},
+				{
+					"type": "report",
+					"is_query_report": True,
+					"name": "Head Count Report",
+					"doctype":'Head Count',
+					"description": _("Head Count Report")
 				},
 			]
 		}

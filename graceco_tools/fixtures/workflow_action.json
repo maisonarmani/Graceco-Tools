@@ -1,52 +1,51 @@
 [
  {
-  "docstatus": 0,
-  "doctype": "Workflow Action",
-  "modified": "2014-10-07 17:42:07.375200",
-  "name": "Approve",
+  "docstatus": 0, 
+  "doctype": "Workflow Action", 
+  "modified": "2014-10-07 17:42:07.375200", 
+  "name": "Approve", 
   "workflow_action_name": "Approve"
- },
+ }, 
  {
-  "docstatus": 0,
-  "doctype": "Workflow Action",
-  "modified": "2014-10-07 17:42:07.376748",
-  "name": "Reject",
+  "docstatus": 0, 
+  "doctype": "Workflow Action", 
+  "modified": "2014-10-07 17:42:07.376748", 
+  "name": "Reject", 
   "workflow_action_name": "Reject"
- },
+ }, 
  {
-  "docstatus": 0,
-  "doctype": "Workflow Action",
-  "modified": "2014-10-07 17:42:07.378165",
-  "name": "Review",
+  "docstatus": 0, 
+  "doctype": "Workflow Action", 
+  "modified": "2014-10-07 17:42:07.378165", 
+  "name": "Review", 
   "workflow_action_name": "Review"
- },
+ }, 
  {
-  "docstatus": 0,
-  "doctype": "Workflow Action",
-  "modified": "2016-07-25 20:35:28.377859",
-  "name": "Apply",
+  "docstatus": 0, 
+  "doctype": "Workflow Action", 
+  "modified": "2016-07-25 20:35:28.377859", 
+  "name": "Apply", 
   "workflow_action_name": "Apply"
- },
+ }, 
  {
-  "docstatus": 0,
-  "doctype": "Workflow Action",
-  "modified": "2016-12-01 15:58:43.926506",
-  "name": "Save",
+  "docstatus": 0, 
+  "doctype": "Workflow Action", 
+  "modified": "2016-12-01 15:58:43.926506", 
+  "name": "Save", 
   "workflow_action_name": "Save"
- },
+ }, 
  {
-  "docstatus": 0,
-  "doctype": "Workflow Action",
-  "modified": "2016-12-01 15:59:33.919658",
-  "name": "Complete",
+  "docstatus": 0, 
+  "doctype": "Workflow Action", 
+  "modified": "2016-12-01 15:59:33.919658", 
+  "name": "Complete", 
   "workflow_action_name": "Complete"
- },
+ }, 
  {
-  "docstatus": 0,
-  "doctype": "Workflow Action",
-  "modified": "2016-12-01 16:00:18.294196",
-  "name": "Cancel",
+  "docstatus": 0, 
+  "doctype": "Workflow Action", 
+  "modified": "2016-12-01 16:00:18.294196", 
+  "name": "Cancel", 
   "workflow_action_name": "Cancel"
  }
 ]
-

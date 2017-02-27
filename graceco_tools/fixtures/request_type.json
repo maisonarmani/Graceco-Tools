@@ -1,0 +1,100 @@
+[
+ {
+  "docstatus": 0, 
+  "doctype": "Request Type", 
+  "modified": "2016-11-02 21:23:15.478114", 
+  "name": "IT Service", 
+  "request_type": "IT Service"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Request Type", 
+  "modified": "2016-11-02 21:24:11.752712", 
+  "name": "Civil Works", 
+  "request_type": "Civil Works"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Request Type", 
+  "modified": "2016-11-02 21:24:50.959381", 
+  "name": "Machine Installation & Repairs", 
+  "request_type": "Machine Installation & Repairs"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Request Type", 
+  "modified": "2016-11-02 21:25:51.909622", 
+  "name": "Vehicle Maintenance & Repairs", 
+  "request_type": "Vehicle Maintenance & Repairs"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Request Type", 
+  "modified": "2016-11-02 21:28:22.216700", 
+  "name": "Generator Maintenance & Repairs", 
+  "request_type": "Generator Maintenance & Repairs"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Request Type", 
+  "modified": "2016-11-02 21:31:31.562553", 
+  "name": "Electrical Services", 
+  "request_type": "Electrical Services"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Request Type", 
+  "modified": "2016-11-02 21:32:47.493591", 
+  "name": "Day Casual Worker", 
+  "request_type": "Day Casual Worker"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Request Type", 
+  "modified": "2016-11-02 21:34:14.496678", 
+  "name": "New Employee", 
+  "request_type": "New Employee"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Request Type", 
+  "modified": "2016-11-02 21:37:31.366462", 
+  "name": "Incident", 
+  "request_type": "Incident"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Request Type", 
+  "modified": "2016-11-02 21:39:20.317530", 
+  "name": "ID Card", 
+  "request_type": "ID Card"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Request Type", 
+  "modified": "2016-11-02 21:43:06.853612", 
+  "name": "IT Support", 
+  "request_type": "IT Support"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Request Type", 
+  "modified": "2016-11-02 21:56:51.891779", 
+  "name": "General", 
+  "request_type": "General"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Request Type", 
+  "modified": "2016-11-02 21:58:21.125538", 
+  "name": "Employee Registration", 
+  "request_type": "Employee Registration"
+ }, 
+ {
+  "docstatus": 0, 
+  "doctype": "Request Type", 
+  "modified": "2017-01-26 11:20:25.473495", 
+  "name": "Fire Extinguisher Refill", 
+  "request_type": "Fire Extinguisher Refill"
+ }
+]

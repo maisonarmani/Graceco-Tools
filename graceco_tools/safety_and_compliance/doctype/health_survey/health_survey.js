@@ -17,40 +17,38 @@ frappe.realtime.on("health_survey_amended",function(data){
 });
 
 frappe.ui.form.on('Health Survey', {
-	refresh: function(frm) {
-		//console.log(frm);
+	onload:function(frm,cdt,cdn){
+        // set prepared by and prepared date
+	},
+	refresh: function(frm,cdt,cdn) {
+		console.log(frm);
+        if (frm.doc.reported_by == "" || frm.doc.reported_by == undefined) {
+        	frappe.model.set_value(cdt, cdn, 'reported_by',user_fullname);
+        }
 	}
 });
-frappe.form.link_formatters['Employee'] = function(value, doc) {
-
-	if(doc.employee_name && doc.employee_name !== value) {
-        return value + ': ' + doc.employee_name;
-    } else {
-        return value;
-    }
-};
 
 cur_frm.cscript.employee_id = function(doc){
-		frappe.call({
-			method:'graceco_tools.safety_and_compliance.api.get_employee',
-			args:{
-				employee_id:doc.employee_id,
-				fields:'date_of_joining as doj'
-			},
-			callback:function(r){
-				if(r.message.doj){
-					var df = moment(frappe.datetime.get_today()).diff(r.message.doj,'months');
-					if(df >= 12){
-						df = [Math.floor(df / 12),df % 12];
-						var year_desc = [df[0] , df[0] > 1 ? " years" :' year'].join(" ")
-						var month_desc = [df[1] , df[1] > 1 ? " months" : ' month'].join(" ")
-						var df_desc = [year_desc,month_desc].join(" and ");
-					}
-					else{
-						var df_desc = [df , df > 1 ? " months" : ' month'].join(" ")
-					}
-					cur_frm.set_value('how_long_working',df_desc);
+	frappe.call({
+		method:'graceco_tools.safety_and_compliance.api.get_employee',
+		args:{
+			employee_id:doc.employee_id,
+			fields:'date_of_joining as doj'
+		},
+		callback:function(r){
+			if(r.message.doj){
+				var df = moment(frappe.datetime.get_today()).diff(r.message.doj,'months');
+				if(df >= 12){
+					df = [Math.floor(df / 12),df % 12];
+					var year_desc = [df[0] , df[0] > 1 ? " years" :' year'].join(" ")
+					var month_desc = [df[1] , df[1] > 1 ? " months" : ' month'].join(" ")
+					var df_desc = [year_desc,month_desc].join(" and ");
 				}
+				else{
+					var df_desc = [df , df > 1 ? " months" : ' month'].join(" ")
+				}
+				cur_frm.set_value('how_long_working',df_desc);
 			}
-		});
+		}
+	});
 };

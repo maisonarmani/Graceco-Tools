@@ -81,7 +81,7 @@ def map_test(source_name, target_doc=None):
         #print(target_doc.__dict__)
         pass
 
-    doclist = get_mapped_doc("Fire Extinguisher Inspection", source_name, {
+    doc = get_mapped_doc("Fire Extinguisher Inspection", source_name, {
         "Fire Extinguisher Inspection": {
             "doctype": "Fire Extinguisher Inspection Car",
             "validation": {
@@ -96,4 +96,4 @@ def map_test(source_name, target_doc=None):
         },
     }, target_doc, set_missing_values)
 
-    return doclist
+    return doc
